@@ -8,7 +8,7 @@ const Titre: React.FC = () => {
     loop: true,
     delay: 90,
     deleteSpeed: 70,
-    pauseFor: 5000, // Pause après avoir écrit
+    pauseFor: 4000, // Pause après avoir écrit
   };
 
   return (

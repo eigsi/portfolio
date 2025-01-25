@@ -89,6 +89,7 @@ h4 {
     padding: 1.5rem;
     max-height: calc(100% - 15rem);
     overflow: hidden;
+    text-align: left;
 }
 
 .botRectangle {

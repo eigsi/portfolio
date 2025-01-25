@@ -195,7 +195,7 @@ function About() {
         <div className='topRectangle'>
 
           <div className='rectanlgeTitle'>
-            <h3>Sing About Me</h3>
+            <h3>Introduction: About me</h3>
             <h4>Antoine Simon</h4>
           </div>
         </div>
