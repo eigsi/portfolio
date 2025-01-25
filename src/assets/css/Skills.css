@@ -1,0 +1,39 @@
+  .skills {
+    margin-top: 20rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .firstRowVinyles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .secondRowVinyles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .vinyle {
+    z-index: 3;
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+    margin: 2rem;
+    margin-bottom: .5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .vinyleCard {
+    color: black;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
