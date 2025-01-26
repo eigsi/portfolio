@@ -3,6 +3,7 @@ import "/src/assets/css/App.css";
 import Header from "./components/Header";
 import Skills from "./components/Skills";
 import About from "./components/About";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <main>
         <About />
         <Skills />
+        <Footer />
       </main>
     </div>
   );

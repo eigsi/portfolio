@@ -6,6 +6,7 @@ header {
   z-index: 1000;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #FBFBFB;
   height: 7rem;
 }
@@ -17,7 +18,7 @@ header {
 
 nav {
   font-size: 1.2rem;
-  width: 100%;
+  width: 1280px;
   display: flex;
   justify-content: space-between;
   align-items: center;

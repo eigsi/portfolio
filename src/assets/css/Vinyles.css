@@ -1,26 +1,29 @@
-.firstRowVinyles {
+.firstRowVinyles, .secondRowVinyles {
+  width: 50vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: -1rem;
+    /* background-color: #1c2f30; */
+    /* background-color: #273e3f; */
   }
-
-  .secondRowVinyles {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  
+ .vinyles {
+  margin-bottom: 1rem;
+ }
   .vinyle {
+    margin-top: 1rem;
+    margin-bottom: -.5rem;
+    margin-left: .8rem;
     z-index: 3;
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     object-fit: contain;
-    margin: 2rem;
-    margin-bottom: .5rem;
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
   }
 
   .vinyleCard {
-    color: #c74038;
+    color: white;
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;

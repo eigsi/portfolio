@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import '/src/assets/css/Vinyles.css'
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,17 +1,13 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding-top: 2rem;
   text-align: center;
+  padding-bottom: 0;
 }
-main {
-  padding-top: 7rem;
-}
+
+
 body {
   background-color: #FBFBFB;
-  /* background-image:  radial-gradient(#c74038 0.5px, transparent 0.5px), radial-gradient(#c74038 0.5px, #FBFBFB 0.5px);
-  background-size: 40px 40px;
-  background-position: 0 0,20px 20px; */
 }
 .card {
   padding: 2em;

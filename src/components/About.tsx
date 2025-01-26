@@ -58,7 +58,7 @@ function About() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: aboutRef.current,
-          start: 'top top',
+          start: 'top+=70% top',
           end: '+=2000',
           scrub: true,
           pin: true,
@@ -79,8 +79,8 @@ function About() {
 
       // Le rectangle « slide » vers le haut
       tl.fromTo(rectRef.current,
-        { y: 50 },
-        { y: 75, ease: 'none' },
+        { y: 0 },
+        { y: 30, ease: 'none' },
         0 // lance en même temps que l’animation du titre
       )
 
@@ -188,7 +188,7 @@ function About() {
   // -------------------------------------
 
   return (
-    <section className="about" ref={aboutRef}>
+    <section id="about" className="about" ref={aboutRef}>
       <h1 ref={titleRef}>  <Titre /></h1>
       <div className='rectangleAbout' ref={rectRef}>
         {/* TOP */}
