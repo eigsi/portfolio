@@ -203,19 +203,19 @@ function About() {
           transformOrigin: 'center top',
           ease: 'power4.inOut',
           duration: 1.5,
-          onStart: () => {
-            if (skillsRef.current) {
-              gsap.to(window, {
-                scrollTo: {
-                  y: skillsRef.current,
-                  offsetY: 520, // Centre Skills
-                },
-                duration: 2, // Ajuster la durée pour un défilement fluide
-                ease: "power2.inOut",
-              });
+          // onStart: () => {
+          //   if (skillsRef.current) {
+          //     gsap.to(window, {
+          //       scrollTo: {
+          //         y: skillsRef.current,
+          //         offsetY: 520, // Centre Skills
+          //       },
+          //       duration: 2, // Ajuster la durée pour un défilement fluide
+          //       ease: "power2.inOut",
+          //     });
       
-            }
-          }
+          //   }
+          // }
         }, '<0.4')
 
     }, aboutRef)

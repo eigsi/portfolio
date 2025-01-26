@@ -5,21 +5,89 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Vinyles from "./Vinyles";
+import Cd from "./Cd";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const Skills = forwardRef<HTMLDivElement>((_, ref) => {
 
-    const playlist1Ref = useRef(null)
-    const playlist2Ref = useRef(null)
+    const playlist1Ref = useRef<HTMLDivElement>(null)
+    const playlist2Ref = useRef<HTMLDivElement>(null)
 
     const [expandedPlaylist, setExpandedPlaylist] = useState<string | null>(null)
 
 
     const handlePlaylistClick = (playlist: string) => {
-        // Si la même playlist est cliquée, la réduire
-        setExpandedPlaylist(prev => prev === playlist ? null : playlist);
+        // Identifier l'élément de la playlist cliqué
+        const playlistRef = playlist === 'playlist1' ? playlist1Ref : playlist2Ref;
+
+        if (playlistRef.current) {
+            // Si la même playlist est cliquée, réduire avec une animation fluide
+            if (expandedPlaylist === playlist) {
+                gsap.to(playlistRef.current, {
+                    height: "10vw",
+                    marginBottom: "1rem",
+                    marginTop: "0",
+                    duration: 0.1,
+                    ease: "power1.InOut",
+                    onComplete: () => {
+                        // Scroll au centre de la section skills
+                        if (ref && 'current' in ref && ref.current) {
+                            gsap.to(window, {
+                                scrollTo: {
+                                    y: ref.current, // La référence de la section skills
+                                    offsetY:
+                                        playlist === 'playlist1'
+                                            ? window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 225 // Offset pour playlist 1
+                                            : window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 150, // Offset pour playlist 2
+                                },
+                                duration: 0.5,
+                                ease: "power2.inOut",
+                            });
+                        }
+                    },
+                });
+                setExpandedPlaylist(null);
+            } else {
+                gsap.to(playlistRef.current, {
+                    height: playlist === 'playlist1' ? "38vw" : "25vw",
+                    marginBottom: playlist === 'playlist1' ? "3rem" : "0",
+                    marginTop: playlist === 'playlist1' ? "0" : "3rem",
+                    duration: 0.2,
+                    ease: "power4.out",
+                    onComplete: () => {
+                        // scroll
+                        if (playlistRef.current) {
+                            gsap.to(window, {
+                                scrollTo: {
+                                    y: playlistRef.current,
+                                    offsetY:
+                                        playlist === 'playlist1'
+                                            ? window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2 - 75
+                                            : window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2,
+                                },
+                                duration: .5,
+                                ease: "power2.inOut",
+                            });
+                        }
+                    },
+                });
+                if (expandedPlaylist) {
+                    const prevRef = expandedPlaylist === 'playlist1' ? playlist1Ref : playlist2Ref;
+                    if (prevRef.current) {
+                        gsap.to(prevRef.current, {
+                            height: "auto",
+                            duration: 0.5,
+                            ease: "power2.out",
+                        });
+                    }
+                }
+
+                setExpandedPlaylist(playlist);
+            }
+        }
     };
+
 
     return (
         <section id="skills" className='skills' ref={ref}>
@@ -39,7 +107,7 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
                     </div>
                     <div className='playlistRight'>
                         <PlayArrowIcon
-                            style={{ fontSize: '40px', color: '#0e191a', background: 'white', padding: '.4rem', borderRadius: '50%' }}
+                            style={{ fontSize: '40px', color: '#fff0f0', background: '#c73f38', padding: '.4rem', borderRadius: '50%' }}
                             className={expandedPlaylist === 'playlist1' ? 'rotated' : ''}
                         />
                     </div>
@@ -61,12 +129,12 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
                     </div>
                     <div className='playlistRight'>
                         <PlayArrowIcon
-                            style={{ fontSize: '40px', color: '#0e191a', background: 'white', padding: '.4rem', borderRadius: '50%' }}
+                            style={{ fontSize: '40px', color: '#fff0f0', background: '#c73f38', padding: '.4rem', borderRadius: '50%' }}
                             className={expandedPlaylist === 'playlist2' ? 'rotated' : ''}
                         />
                     </div>
                 </div>
-
+                <Cd />
             </div>
         </section>
     )
