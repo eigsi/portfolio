@@ -1,31 +1,7 @@
-import { useEffect } from "react";
-import { gsap } from "gsap";
 import '/src/assets/css/Vinyles.css'
 
 
 function Vinyles() {
-
-  // TURN THE VINYLES
-  useEffect(() => {
-    const vinyles = document.querySelectorAll(".vinyle");
-
-    vinyles.forEach((vinyle) => {
-      gsap.to(
-        vinyle,
-        {
-          rotation: "+=360",
-          duration: 10,
-          repeat: -1,
-          ease: "none",
-          modifiers: {
-            rotation: (value) => `${parseFloat(value) % 360}`,
-          },
-        }
-      );
-    });
-  }, []);
-
-
 
   return (
     <section className="vinyles">

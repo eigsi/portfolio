@@ -27,6 +27,24 @@
   transition: 0.3s ease;
 }
 
+/* ----- ANIMATION -------- */
+
+.vinyle, .cd {
+  animation: spinPause 20s ease-in-out infinite; /* Une seule animation combinée */
+}
+
+/* Combine spin et pause en une seule animation */
+@keyframes spinPause {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg); /* Pause */
+  }
+}
+
+/* ----- ANIMATION -------- */
+
 .cd {
   width: 10rem;
   height: 10rem;
