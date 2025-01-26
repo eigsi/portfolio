@@ -37,5 +37,5 @@ h1 {
   height: 5rem; 
   pointer-events: none; 
   background: linear-gradient(to bottom, #FBFBFB 0%, #fbfbfb00 100%);
-  z-index: 999; /* Assure-toi que le masque est au-dessus du contenu */
+  z-index: 999; 
 }

@@ -18,8 +18,8 @@ function wrapWordsWithSpan(text: string) {
   const words = text.split(" ");
   const groupedWords = [];
 
-  for (let i = 0; i < words.length; i += 3) {
-    const group = words.slice(i, i + 3).join(" "); // Regroupe 3 mots
+  for (let i = 0; i < words.length; i += 9) {
+    const group = words.slice(i, i + 9).join(" "); // Regroupe 3 mots
     groupedWords.push(`<span class="word">${group} </span>`); // Wrap dans un <span>
   }
 
@@ -137,6 +137,11 @@ function About() {
         {
           scrollTop: scrollNeeded,
           ease: 'none',
+          onStart: () => {
+            if (lyricsEl) {
+              lyricsEl.style.overflowY = 'auto';
+            }
+          },
         },
         'rectGrowEnd+=0.05'
       )
@@ -146,7 +151,7 @@ function About() {
       if (wordSpans) {
 
         wordSpans.forEach((word, index) => {
-          if (index < 8) {
+          if (index < 1) {
             word.style.color = "#fff";
           }
         });
@@ -158,7 +163,7 @@ function About() {
             ease: 'steps(1)',
 
             stagger: {
-              each: (.6 / wordSpans.length),
+              each: (.7 / wordSpans.length),
               from: "start"
             }
           },
