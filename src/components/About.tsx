@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import '/src/assets/css/About.css'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
@@ -8,8 +9,9 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import ReplayIcon from '@mui/icons-material/Replay';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import Titre from './Titre';
+import Skills from "./Skills";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 // Découper texte
 function wrapWordsWithSpan(text: string) {
@@ -30,6 +32,7 @@ function About() {
   const aboutRef = useRef(null)
   const titleRef = useRef(null)
   const rectRef = useRef(null)
+  const skillsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -177,6 +180,44 @@ function About() {
         duration: 1.5
       }, 'allWordsWhite-=0.1')
 
+      tl.fromTo(
+        lyricsEl,
+        { scrollTop: 0 },
+        {
+          scrollTop: scrollNeeded,
+          ease: 'none',
+        },
+        'rectGrowEnd+=0.05'
+      )
+
+      // Apparition skills
+      tl.fromTo(skillsRef.current, {
+        scale: 0.5,
+        y: 200,
+        opacity: 0,
+      },
+        {
+          scale: 1,
+          y: -150,
+          opacity: 1,
+          transformOrigin: 'center top',
+          ease: 'power4.inOut',
+          duration: 1.5,
+          onStart: () => {
+            if (skillsRef.current) {
+              gsap.to(window, {
+                scrollTo: {
+                  y: skillsRef.current,
+                  offsetY: 520, // Centre Skills
+                },
+                duration: 2, // Ajuster la durée pour un défilement fluide
+                ease: "power2.inOut",
+              });
+      
+            }
+          }
+        }, '<0.4')
+
     }, aboutRef)
 
     // Nettoyage
@@ -188,52 +229,55 @@ function About() {
   // -------------------------------------
 
   return (
-    <section id="about" className="about" ref={aboutRef}>
-      <h1 ref={titleRef}>  <Titre /></h1>
-      <div className='rectangleAbout' ref={rectRef}>
-        {/* TOP */}
-        <div className='topRectangle'>
+    <main>
+      <section id="about" className="about" ref={aboutRef}>
+        <h1 ref={titleRef}>  <Titre /></h1>
+        <div className='rectangleAbout' id="rectangleAbout" ref={rectRef}>
+          {/* TOP */}
+          <div className='topRectangle'>
 
-          <div className='rectanlgeTitle'>
-            <h3>Introduction: About me</h3>
-            <h4>Antoine Simon</h4>
+            <div className='rectanlgeTitle'>
+              <h3>Introduction: About me</h3>
+              <h4>Antoine Simon</h4>
+            </div>
           </div>
-        </div>
-        {/* GRADIENT TOP */}
-        <div className="mask gradient-mask-top"></div>
-        {/* LYRICS */}
-        <div className='lyricsRectangle'><p>Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School</p></div>
+          {/* GRADIENT TOP */}
+          <div className="mask gradient-mask-top"></div>
+          {/* LYRICS */}
+          <div className='lyricsRectangle'><p>Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School</p></div>
 
-        {/* GRADIENT BOT */}
-        <div className="mask gradient-mask-bot"></div>
-        {/* BOTTOM */}
-        <div className='botRectangle'>
+          {/* GRADIENT BOT */}
+          <div className="mask gradient-mask-bot"></div>
+          {/* BOTTOM */}
+          <div className='botRectangle'>
 
-          {/* BTNS RECTANGLE */}
+            {/* BTNS RECTANGLE */}
 
-          <div className='btnsRectangle'>
-            <div className="icon-rectangle icon-shuffle">
-              <ShuffleIcon style={{ fontSize: '30px', color: '#FBFBFB', opacity: 0.8 }} />
-            </div>
-            <div className="icon-rectangle icon-previous">
-              <SkipPreviousIcon style={{ fontSize: '40px', color: '#FBFBFB' }} />
-            </div>
-            <div className="icon-rectangle icon-play">
-              <PlayArrowIcon style={{ fontSize: '40px', color: '#c74038' }} />
-            </div>
-            <div className="icon-rectangle icon-next">
-              <SkipNextIcon style={{ fontSize: '40px', color: '#FBFBFB' }} />
-            </div>
-            <div className="icon-rectangle icon-replay">
-              <ReplayIcon style={{ fontSize: '30px', color: '#FBFBFB', opacity: 0.8 }} />
-            </div>
+            <div className='btnsRectangle'>
+              <div className="icon-rectangle icon-shuffle">
+                <ShuffleIcon style={{ fontSize: '30px', color: '#FBFBFB', opacity: 0.8 }} />
+              </div>
+              <div className="icon-rectangle icon-previous">
+                <SkipPreviousIcon style={{ fontSize: '40px', color: '#FBFBFB' }} />
+              </div>
+              <div className="icon-rectangle icon-play">
+                <PlayArrowIcon style={{ fontSize: '40px', color: '#c74038' }} />
+              </div>
+              <div className="icon-rectangle icon-next">
+                <SkipNextIcon style={{ fontSize: '40px', color: '#FBFBFB' }} />
+              </div>
+              <div className="icon-rectangle icon-replay">
+                <ReplayIcon style={{ fontSize: '30px', color: '#FBFBFB', opacity: 0.8 }} />
+              </div>
 
+            </div>
           </div>
+
+
         </div>
-
-
-      </div>
-    </section>
+      </section>
+      <Skills ref={skillsRef} />
+    </main>
   )
 }
 

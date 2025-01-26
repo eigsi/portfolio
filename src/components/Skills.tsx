@@ -1,5 +1,5 @@
 import '/src/assets/css/Skills.css'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useState, forwardRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
@@ -8,95 +8,12 @@ import Vinyles from "./Vinyles";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
-function Skills() {
-    const skillsRef = useRef(null)
-    const titleRef = useRef(null)
+const Skills = forwardRef<HTMLDivElement>((_, ref) => {
+
     const playlist1Ref = useRef(null)
     const playlist2Ref = useRef(null)
 
     const [expandedPlaylist, setExpandedPlaylist] = useState<string | null>(null)
-
-    useEffect(() => {
-        let ctx = gsap.context(() => {
-            // AVANT
-            const forwardTl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: skillsRef.current,
-                    start: 'top 80%',
-                    end: 'bottom top',
-                    scrub: false,
-                    toggleActions: 'restart none none none',
-                    onEnter: () => {
-                        //force scroll
-                        gsap.to(window, {
-                            scrollTo: {
-                                y: skillsRef.current || 0, 
-                                offsetY: 200,          
-                                autoKill: false   
-                            },
-                            duration: 1,
-                            ease: 'power2.inOut',
-                            onComplete: () => {
-                                backwardTl.pause(0)
-                            }
-                        })
-                    }
-                }
-            });
-
-            forwardTl.fromTo(
-                titleRef.current,
-                { y: 400, scale: 2, opacity: 0 },
-                { scale: 1, opacity: 1, duration: 0.6, y: 0, ease: 'power2.out' }
-            )
-                .addLabel('playlistsStart', '<')
-                .fromTo(
-                    playlist1Ref.current,
-                    { x: -80, opacity: 0 },
-                    { opacity: 1, duration: 0.4, x: 0, ease: 'power1.out' },
-                    'playlistsStart+=0.2'
-                )
-                .fromTo(
-                    playlist2Ref.current,
-                    { x: -80, opacity: 0 },
-                    { opacity: 1, duration: 0.4, x: 0, ease: 'power1.out' },
-                    'playlistsStart+=0.4'
-                )
-
-            forwardTl.eventCallback('onComplete', () => {
-                backwardTl.pause(0)
-            });
-
-            // RETOUR
-            const backwardTl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: skillsRef.current,
-                    start: 'top 50%',
-                    end: 'bottom top',
-                    scrub: false,
-                    toggleActions: 'none none none play',
-                    // markers: true,
-                    onEnterBack: () => {
-                        forwardTl.pause(0) 
-                    }
-                },
-            });
-
-            backwardTl
-                .to(skillsRef.current, {
-                    y: 300,
-                    scale: 0.5,
-                    opacity: 0.5,
-                    duration: 0.6,
-                    ease: 'power4.in',
-                })
-            backwardTl.eventCallback('onComplete', () => {
-                forwardTl.pause(0)
-            });
-
-        }, skillsRef);
-        return () => ctx.revert();
-    }, []);
 
 
     const handlePlaylistClick = (playlist: string) => {
@@ -105,8 +22,8 @@ function Skills() {
     };
 
     return (
-        <section id="skills" className='skills' ref={skillsRef}>
-            <h2 ref={titleRef}>My Favorite Playlists</h2>
+        <section id="skills" className='skills' ref={ref}>
+            <h2>My Favorite Playlists</h2>
             <div
                 className={`playlist codePlaylist ${expandedPlaylist === 'playlist1' ? 'expanded' : ''}`}
                 ref={playlist1Ref}
@@ -153,6 +70,6 @@ function Skills() {
             </div>
         </section>
     )
-}
+});
 
 export default Skills
