@@ -77,8 +77,8 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
         {/* SLIDE 2 */}
         <div className='slide slide2'>
           <div className='slideTop'>
-            <h3>Review your fav music</h3>
-            <p>A social platform for rating and discovering music. </p>
+            <h3>Live Through Music</h3>
+            <p>Rate albums, write reviews, and see what your friends think. Music is better when shared. </p>
           </div>
           <img
             src="src/assets/images/wavee/wavee2.png"
@@ -90,8 +90,21 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
         {/* SLIDE 3 */}
         <div className='slide slide3'>
           <div className='slideTop'>
-            <h3>Review your fav music</h3>
-            <p>A social platform for rating and discovering music. </p>
+            <h3>Powered by Innovation</h3>
+            <p>Built with cutting-edge technologies like Symfony, Kubernetes, and PostgreSQL. </p>
+          </div>
+          <img
+            src="src/assets/images/wavee/wavee2.png"
+            alt="Wavee HomePage"
+            className="waveeImg"
+          />
+        </div>
+
+          {/* SLIDE 4 */}
+          <div className='slide slide3'>
+          <div className='slideTop'>
+            <h3>Coming to iOS</h3>
+            <p>The iOS version is on its way! Soon, discover music, rate albums, and connect with friends right from your iPhone.</p>
           </div>
           <img
             src="src/assets/images/wavee/wavee2.png"

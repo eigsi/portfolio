@@ -50,16 +50,16 @@
 
 .slideTop.in-view {
 
-     /* état final */
+    /* état final */
     opacity: 1;
     transform: translateX(0);
-  }
+}
 
 .slide p {
     margin: 0rem;
     font-size: 1.8rem;
     color: #c73f38;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -0.03em;
 }
 
@@ -67,7 +67,7 @@
     margin: 0rem;
     font-size: 2.5rem;
     color: #c73f38;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: -0.03em;
 }
 
@@ -82,16 +82,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    transition:  0.3s ease;
+    justify-content: flex-start;
+    transition: 0.3s ease;
 }
 
-.slide1{
+.slide1 {
     margin-left: 15%;
-}
-
-.slide3{
-    margin-right: 15%;
 }
 
 .projects h2 {
@@ -103,4 +99,14 @@
 .projects h2.in-view {
     opacity: 1;
     transform: translateY(0);
-  }
+}
+
+.slide2 .waveeImg  {
+    width: 35vw;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+.slideTop p {
+    text-align: left;
+}
