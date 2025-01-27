@@ -1,7 +1,7 @@
 function Projects() {
     return (
       <section id="projects">
-        <h2>Projects</h2>
+        <h2>My Biggest Project Yet</h2>
       </section>
     )
   }

@@ -6,9 +6,9 @@ const Titre: React.FC = () => {
     strings: ['Welcome.', 'Scroll Down'],
     autoStart: true,
     loop: true,
-    delay: 90,
-    deleteSpeed: 70,
-    pauseFor: 4000, // Pause après avoir écrit
+    delay: 50,
+    deleteSpeed: 50,
+    pauseFor: 3000, 
   };
 
   return (

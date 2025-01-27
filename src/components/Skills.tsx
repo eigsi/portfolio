@@ -38,8 +38,8 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
                                     y: ref.current, // La référence de la section skills
                                     offsetY:
                                         playlist === 'playlist1'
-                                            ? window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 225 // Offset pour playlist 1
-                                            : window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 150, // Offset pour playlist 2
+                                            ? window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 205 // Offset pour playlist 1
+                                            : window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 120, // Offset pour playlist 2
                                 },
                                 duration: 0.5,
                                 ease: "power2.inOut",
@@ -63,20 +63,22 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
                                     y: playlistRef.current,
                                     offsetY:
                                         playlist === 'playlist1'
-                                            ? window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2 - 75
+                                            ? window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2 - 35
                                             : window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2,
                                 },
                                 duration: .5,
                                 ease: "power2.inOut",
                             });
                         }
-                    },
+                    },  
                 });
                 if (expandedPlaylist) {
                     const prevRef = expandedPlaylist === 'playlist1' ? playlist1Ref : playlist2Ref;
                     if (prevRef.current) {
                         gsap.to(prevRef.current, {
                             height: "auto",
+                            marginBottom: "1rem",
+                            marginTop: "0",
                             duration: 0.5,
                             ease: "power2.out",
                         });
@@ -101,7 +103,7 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
                     <div className='playlistLeft'>
                         <img src="src/assets/images/cover/codePlaylist.png" alt="Code Playlist" />
                         <div className='playlistInfos'>
-                            <h3>Coding tools 2025</h3>
+                            <h3>Main Coding tools 2025</h3>
                             <h4>8 Songs</h4>
                         </div>
                     </div>
