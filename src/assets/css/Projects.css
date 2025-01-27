@@ -160,3 +160,36 @@
 .swiftLogo {
   border-radius: 2rem;
 }
+
+.slide3Img {
+    height: 7rem;
+    width: auto;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.slideBottom {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+}
+
+.slide3 {
+    position: relative;
+}
+
+.backgroundImgContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.backgroundImg {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    margin-bottom: 1.9rem;
+    margin-right: -1.8rem;
+}

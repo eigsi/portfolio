@@ -92,12 +92,35 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
           <div className='slideTop'>
             <h3>Powered by Innovation</h3>
             <p>Built with cutting-edge technologies like Symfony, Kubernetes, and PostgreSQL. </p>
+            <div className='slideBottom'>
+
+              <img
+                src="src/assets/images/wavee/symfony.png"
+                alt="Symfony"
+                className="slide3Img"
+              />
+              <img
+                src="src/assets/images/wavee/kubernetes.png"
+                alt="Kubernetes"
+                className="slide3Img"
+              />
+              <img
+                src="src/assets/images/wavee/postgresql.png"
+                alt="postgresql"
+                className="slide3Img"
+              />
+
+            </div>
           </div>
-          <img
-            src="src/assets/images/wavee/wavee2.png"
-            alt="Wavee HomePage"
-            className="waveeImg"
-          />
+          <div className='backgroundImgContainer'>
+
+            <img
+              src="src/assets/images/wavee/ipad3.png"
+              alt="waveeCollectionPage"
+              className="backgroundImg"
+            />
+          </div>
+
         </div>
 
         {/* SLIDE 4 */}
@@ -115,7 +138,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                 <img
                   src="src/assets/images/wavee/ios.png"
                   alt="iOS"
-                   className="iosLogo logosImg"
+                  className="iosLogo logosImg"
                 />
               </div>
             </div>
