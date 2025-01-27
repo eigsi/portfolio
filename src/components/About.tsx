@@ -10,6 +10,7 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import Titre from './Titre';
 import Skills from "./Skills";
+import Projects from "./Projects";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -33,6 +34,7 @@ function About() {
   const titleRef = useRef(null)
   const rectRef = useRef(null)
   const skillsRef = useRef<HTMLDivElement>(null);
+  const ProjectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -195,7 +197,9 @@ function About() {
         'rectGrowEnd+=0.05'
       )
 
-      // Apparition skills
+      // -------------------------------
+      // PHASE D : Apparition des skills
+      // -------------------------------
       tl.fromTo(skillsRef.current, {
         scale: 0.5,
         y: 200,
@@ -208,24 +212,10 @@ function About() {
           transformOrigin: 'center top',
           ease: 'power4.inOut',
           duration: 1.5,
-          // onStart: () => {
-          //   if (skillsRef.current) {
-          //     gsap.to(window, {
-          //       scrollTo: {
-          //         y: skillsRef.current,
-          //         offsetY: 520, // Centre Skills
-          //       },
-          //       duration: 2, // Ajuster la durée pour un défilement fluide
-          //       ease: "power2.inOut",
-          //     });
-      
-          //   }
-          // }
-        }, '<0.4')
+        }, '<0.6')
 
     }, aboutRef)
 
-    // Nettoyage
     return () => ctx.revert()
   }, [])
 
@@ -282,6 +272,7 @@ function About() {
         </div>
       </section>
       <Skills ref={skillsRef} />
+      <Projects ref={ProjectsRef} />
     </main>
   )
 }

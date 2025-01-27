@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div className="gradient-mask"></div>
+      {/* <div className="gradient-mask"></div> */}
       <About />
       <Footer />
     </div>
