@@ -239,7 +239,21 @@ function About() {
           {/* GRADIENT TOP */}
           <div className="mask gradient-mask-top"></div>
           {/* LYRICS */}
-          <div className='lyricsRectangle'><p>Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School. Hi, my name is Antoine, I come from La Rochelle in France and I am in 4 year of Engineer School</p></div>
+          <div className='lyricsRectangle'>
+            <p>
+              Hi, I’m Antoine SIMON, a 4th-year engineering student specializing in Computer Science, currently seeking a 2–3 month internship starting in early June.
+            </p>
+            <p>
+              I love blending creativity with logic and tackling challenges, which is why I’m having so much fun developing this portfolio and my other projects.
+            </p>
+            <p>
+              I’m always looking for new ways to achieve beautiful results or solve complex problems.
+            </p>
+            <p>
+              Thank you for your time, I hope you will enjoy your journey!
+            </p>
+
+          </div>
 
           {/* GRADIENT BOT */}
           <div className="mask gradient-mask-bot"></div>

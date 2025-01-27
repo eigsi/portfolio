@@ -58,7 +58,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
   return (
     <section className="projects" ref={ref}>
-      <h2  ref={titleRef}>My Biggest Project Yet</h2>
+      <h2 ref={titleRef}>My Biggest Project Yet</h2>
       <section className='slides' ref={slidesRef}>
 
         {/* SLIDE 1 */}
@@ -100,17 +100,35 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
           />
         </div>
 
-          {/* SLIDE 4 */}
-          <div className='slide slide3'>
-          <div className='slideTop'>
-            <h3>Coming to iOS</h3>
-            <p>The iOS version is on its way! Soon, discover music, rate albums, and connect with friends right from your iPhone.</p>
+        {/* SLIDE 4 */}
+        <div className='lastSlide'>
+          <div className='slide slide4'>
+            <div className='slideTop slideTop4'>
+              <h3>Coming to iOS</h3>
+              <p>The iOS version is on its way! Soon, discover music, rate albums, and connect with friends right from your iPhone.</p>
+              <div className='logos'>
+                <img
+                  src="src/assets/images/wavee/swift.png"
+                  alt="Swift"
+                  className="swiftLogo logosImg"
+                />
+                <img
+                  src="src/assets/images/wavee/ios.png"
+                  alt="iOS"
+                   className="iosLogo logosImg"
+                />
+              </div>
+            </div>
+            <div className='slideRight'>
+              <img
+                src="src/assets/images/wavee/iphones.png"
+                alt="Wavee HomePage"
+                className="iphones"
+              />
+            </div>
           </div>
-          <img
-            src="src/assets/images/wavee/wavee2.png"
-            alt="Wavee HomePage"
-            className="waveeImg"
-          />
+          <div className='slideEmpty'>
+          </div>
         </div>
       </section>
     </section>

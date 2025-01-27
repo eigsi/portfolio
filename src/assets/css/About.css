@@ -93,6 +93,8 @@ h4 {
     text-align: left;
     pointer-events: none;
     scrollbar-width: none;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .lyricsRectangle::-webkit-scrollbar {
@@ -100,7 +102,7 @@ h4 {
   }
 
 .botRectangle {
-    height: 9rem;
+    height: 6rem;
 }
 
 .btnsRectangle {

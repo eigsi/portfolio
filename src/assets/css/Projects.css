@@ -71,9 +71,21 @@
     letter-spacing: -0.03em;
 }
 
+.lastSlide {
+    flex: 0 0 80%;
+}
+
+.lastSlide .slide {
+    width: 75%;
+}
+
+.slideEmpty {
+    flex: 0 0 25%;
+    background-color: white;
+}
 .slide {
-    flex: 0 0 70%;
-    height: 80%;
+    flex: 0 0 60%;
+    height: 85%;
     scroll-snap-align: center;
     margin: 0 1rem;
     background-color: #fff0f0;
@@ -86,8 +98,32 @@
     transition: 0.3s ease;
 }
 
+.slide4 {
+    flex: 0 0 60%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0vw;
+    height: calc(85% + 4rem);
+}
+
+.slideTop4 {
+    margin: 2rem;
+}
+
+.slideRight {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+}
+.iphones {
+    width: 100%;
+    height: 95%;
+    object-fit: contain;
+}
 .slide1 {
-    margin-left: 15%;
+    margin-left: 20%;
 }
 
 .projects h2 {
@@ -109,4 +145,18 @@
 }
 .slideTop p {
     text-align: left;
+}
+
+.logos {
+    margin-top: 1rem;
+}
+.logosImg {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.swiftLogo {
+  border-radius: 2rem;
 }
