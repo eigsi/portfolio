@@ -4,31 +4,50 @@ import '/src/assets/css/Projects.css'
 const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
   const slidesRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
+  // Animation Titre
   useEffect(() => {
-    // Sélectionner tous les .slideTop à l'intérieur de slidesRef
+    if (titleRef.current) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          } else {
+            entry.target.classList.remove('in-view');
+          }
+        },
+        {
+          threshold: 1,
+        }
+      );
+
+      observer.observe(titleRef.current);
+
+      return () => observer.disconnect();
+    }
+  }, []);
+
+  // Animation SlideTop
+  useEffect(() => {
     const slideTops = slidesRef.current?.querySelectorAll('.slideTop');
     if (!slideTops) return;
 
-    // Création de l'observeur
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Ajoute la classe quand l'élément est visible
             entry.target.classList.add('in-view');
           } else {
-            // Enlève la classe quand il sort du viewport (pour l'animation au départ)
             entry.target.classList.remove('in-view');
           }
         });
       },
       {
-        threshold: 0.8, // Ajuste le seuil de visibilité
+        threshold: 0.8, // 80% de l'élément visible
       }
     );
 
-    // Observer chaque slideTop
     slideTops.forEach((slideTop) => observer.observe(slideTop));
 
     // Nettoyage
@@ -39,12 +58,12 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
   return (
     <section className="projects" ref={ref}>
-      <h2>My Biggest Project Yet</h2>
+      <h2  ref={titleRef}>My Biggest Project Yet</h2>
       <section className='slides' ref={slidesRef}>
 
         {/* SLIDE 1 */}
         <div className='slide slide1'>
-          <div className='slideTop'>
+          <div className='slideTop in-view'>
             <h3>Wavee</h3>
             <p>A social platform for rating and discovering music. </p>
           </div>

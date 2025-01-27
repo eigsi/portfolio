@@ -93,3 +93,14 @@
 .slide3{
     margin-right: 15%;
 }
+
+.projects h2 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease;
+}
+
+.projects h2.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
