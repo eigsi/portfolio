@@ -126,6 +126,17 @@
     margin-left: 20%;
 }
 
+.slide a {
+    margin-top: 1rem;
+    text-decoration: none;
+    text-decoration: underline;
+    color: #c73f38;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    transition: 0.3s ease;  
+}
+
 .projects h2 {
     opacity: 0;
     transform: translateY(50px);
@@ -181,6 +192,7 @@
     width: 60%;
     align-self: self-start;
 }
+
 
 .backgroundImgContainer {
     position: absolute;

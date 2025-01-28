@@ -58,19 +58,35 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
                     onComplete: () => {
                         // scroll
                         if (playlistRef.current) {
+
+                            let offset = window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2;
+                            if (expandedPlaylist && expandedPlaylist !== playlist) {
+                                const prevRef = expandedPlaylist === 'playlist1' ? playlist1Ref : playlist2Ref;
+
+                                if (prevRef.current) {
+                                    // Ajustement spécifique basé sur la playlist qui se ferme
+                                    let manualOffsetAdjustment = 0;
+                            
+                                    if (expandedPlaylist === 'playlist1') {
+                                        manualOffsetAdjustment = 160; 
+                                    } else if (expandedPlaylist === 'playlist2') {
+                                        manualOffsetAdjustment = 0; 
+                                    }
+                            
+                                    offset += manualOffsetAdjustment;
+                                }
+                            }
                             gsap.to(window, {
+
                                 scrollTo: {
                                     y: playlistRef.current,
-                                    offsetY:
-                                        playlist === 'playlist1'
-                                            ? window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2
-                                            : window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2,
+                                    offsetY: offset,
                                 },
                                 duration: .5,
                                 ease: "power2.inOut",
                             });
                         }
-                    },  
+                    },
                 });
                 if (expandedPlaylist) {
                     const prevRef = expandedPlaylist === 'playlist1' ? playlist1Ref : playlist2Ref;

@@ -76,9 +76,10 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
         {/* SLIDE 2 */}
         <div className='slide slide2'>
-          <div className='slideTop'>
+          <div className='slideTop slideTop2'>
             <h3>Live Through Music</h3>
-            <p>Rate albums, write reviews, and see what your friends think. Music is better when shared. </p>
+            <p>Rate albums, write reviews, and see what your friends think. <br></br>Music is better when shared. </p>
+            <a href='waveemusic.com'>Start Now !</a>
           </div>
           <img
             src="src/assets/images/wavee/wavee2.png"

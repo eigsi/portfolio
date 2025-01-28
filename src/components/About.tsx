@@ -15,21 +15,17 @@ import Projects from "./Projects";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 // Découper texte
-function wrapWordsWithSpan(text: string) {
-  const words = text.split(" ");
-  const groupedWords = [];
+function wrapLinesWithSpan(htmlString: string) {
+  const lines = htmlString.split(/<br\s*\/?>/i).map((line) => line.trim()); // Découpe en lignes
 
-  for (let i = 0; i < words.length; i += 9) {
-    const group = words.slice(i, i + 9).join(" "); // Regroupe 3 mots
-    groupedWords.push(`<span class="word">${group} </span>`); // Wrap dans un <span>
-  }
+  // Ajouter un span pour chaque ligne
+  const wrappedLines = lines.map((line) => `<span class="line">${line}</span>`);
 
-  return groupedWords.join(""); // Retourne le texte final avec les groupes
+  return wrappedLines.join("<br>");
 }
 
 function About() {
 
-  // Références pour cibler les éléments
   const aboutRef = useRef(null)
   const titleRef = useRef(null)
   const rectRef = useRef(null)
@@ -41,16 +37,15 @@ function About() {
 
       // 1) Sélection et wrapping des lyrics
       const lyricsEl = document.querySelector('.lyricsRectangle') as HTMLDivElement | null;
-      let wordSpans: NodeListOf<HTMLSpanElement> | null = null;
+      let lineSpans: NodeListOf<HTMLSpanElement> | null = null; 
+
+      // 2) séparer en lignes
       if (lyricsEl && lyricsEl.textContent) {
-        // Récupérer le texte brut
-        const originalText = lyricsEl.textContent.trim();
-        // Transformer en <span class="word">word </span>
-        const wrappedHTML = wrapWordsWithSpan(originalText);
-        // Remplacer le contenu par ce nouveau HTML
+
+        const originalHTML = lyricsEl.innerHTML.trim();
+        const wrappedHTML = wrapLinesWithSpan(originalHTML);
         lyricsEl.innerHTML = wrappedHTML;
-        // Sélectionner tous les mots
-        wordSpans = lyricsEl.querySelectorAll('.word');
+        lineSpans = lyricsEl.querySelectorAll('.line');
       }
 
       let scrollNeeded = 0;
@@ -150,22 +145,16 @@ function About() {
 
 
       // 2ème animation : faire passer chaque mot de noir à blanc
-      if (wordSpans) {
-
-        wordSpans.forEach((word, index) => {
-          if (index < 1) {
-            word.style.color = "#fff";
-          }
-        });
+      if (lineSpans) {
 
         tl.to(
-          wordSpans,
+          lineSpans,
           {
             color: "#fff",
             ease: 'steps(1)',
 
             stagger: {
-              each: (.7 / wordSpans.length),
+              each: (.7 / lineSpans.length),
               from: "start"
             }
           },
@@ -241,15 +230,12 @@ function About() {
           {/* LYRICS */}
           <div className='lyricsRectangle'>
             <p>
-              Hi, I’m Antoine SIMON, a 4th-year engineering student specializing in Computer Science, currently seeking a 2–3 month internship starting in early June.
-            </p>
-            <p>
-              I love blending creativity with logic and tackling challenges, which is why I’m having so much fun developing this portfolio and my other projects.
-            </p>
-            <p>
-              I’m always looking for new ways to achieve beautiful results or solve complex problems.
-            </p>
-            <p>
+              Hi, I’m Antoine SIMON, a 4th-year engineering student specializing in Computer Science, currently seeking a 2–3 month internship starting in early June.<br></br>
+
+              I love blending creativity with logic and tackling challenges, which is why I’m having so much fun developing this portfolio and my other projects.<br></br>
+
+              I’m always looking for new ways to achieve beautiful results or solve complex problems.<br></br>
+
               Thank you for your time, I hope you will enjoy your journey!
             </p>
 
