@@ -104,7 +104,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 0vw;
-    height: calc(85% + 4rem);
+    height: calc(85% + 4vw);
 }
 
 .slideTop4 {
@@ -151,31 +151,35 @@
     margin-top: 1rem;
 }
 .logosImg {
-    height: 7rem;
-    width: 7rem;
-    border-radius: 2rem;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 1.7rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-.swiftLogo {
-  border-radius: 2rem;
-}
-
 .slide3Img {
-    height: 7rem;
+    height: 5rem;
     width: auto;
-    border-radius: 2rem;
+    border-radius: 1.4rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .slideBottom {
-    margin-top: 1rem;
+    margin-top: 3rem;
     width: 100%;
     display: flex;
 }
 
 .slide3 {
     position: relative;
+    padding: 0;
+    height: calc(85% + 4vw);
+}
+
+.slideTop3 {
+    margin: 2rem;
+    width: 60%;
+    align-self: self-start;
 }
 
 .backgroundImgContainer {
@@ -185,11 +189,11 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    padding: 0;
 }
 .backgroundImg {
-    width: 80%;
+    width: 90%;
     height: 80%;
-    object-fit: contain;
-    margin-bottom: 1.9rem;
-    margin-right: -1.8rem;
+    object-fit: cover;
+    margin: 0;
 }

@@ -89,10 +89,10 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
         {/* SLIDE 3 */}
         <div className='slide slide3'>
-          <div className='slideTop'>
+          <div className='slideTop slideTop3'>
             <h3>Powered by Innovation</h3>
             <p>Built with cutting-edge technologies like Symfony, Kubernetes, and PostgreSQL. </p>
-            <div className='slideBottom'>
+            <div className='slideBottom slideBottom3'>
 
               <img
                 src="src/assets/images/wavee/symfony.png"
