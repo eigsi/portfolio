@@ -57,7 +57,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
   }, []);
 
   return (
-    <section className="projects" ref={ref}>
+    <section className="projects" id='projects' ref={ref}>
       <h2 ref={titleRef}>My Biggest Project Yet</h2>
       <section className='slides' ref={slidesRef}>
 

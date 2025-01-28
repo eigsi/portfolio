@@ -214,7 +214,7 @@ function About() {
 
   return (
     <main>
-      <section id="about" className="about" ref={aboutRef}>
+      <section className="about" ref={aboutRef}>
         <h1 ref={titleRef}>  <Titre /></h1>
         <div className='rectangleAbout' id="rectangleAbout" ref={rectRef}>
           {/* TOP */}
@@ -228,7 +228,7 @@ function About() {
           {/* GRADIENT TOP */}
           <div className="mask gradient-mask-top"></div>
           {/* LYRICS */}
-          <div className='lyricsRectangle'>
+          <div id="about" className='lyricsRectangle'>
             <p>
               Hi, I’m Antoine SIMON, a 4th-year engineering student specializing in Computer Science, currently seeking a 2–3 month internship starting in early June.<br></br>
 
