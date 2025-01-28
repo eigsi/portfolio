@@ -13,9 +13,19 @@ function Header() {
                     <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <div className="right-nav">
-                    <FontAwesomeIcon icon={faDownload} className="icon-download"/>
-                    <a href="#resume">Resume</a>
+                <div
+                    className="right-nav"
+                    onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = '/public/CV2025.pdf';
+                        link.download = 'Antoine_Simon_resume.pdf'; 
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }}
+                >
+                    <FontAwesomeIcon icon={faDownload} className="icon-download" />
+                    <span>Resume</span>
                 </div>
             </nav>
         </header>

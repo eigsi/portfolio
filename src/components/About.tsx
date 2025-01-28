@@ -232,7 +232,7 @@ function About() {
             <p>
               Hi, I’m Antoine SIMON, a 4th-year engineering student specializing in Computer Science, currently seeking a 2–3 month internship starting in early June.<br></br>
 
-              I love blending creativity with logic and tackling challenges, which is why I’m having so much fun developing this portfolio and my other projects.<br></br>
+              I love blending creativity with logic and hard challenges, which is why I’m having so much fun developing this portfolio and my other projects.<br></br>
 
               I’m always looking for new ways to achieve beautiful results or solve complex problems.<br></br>
 
