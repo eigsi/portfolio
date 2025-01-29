@@ -6,12 +6,12 @@ function Footer() {
       <div className="footerContent">
         <ul className="footer-links">
           <li>
-            <a href="https://github.com/tonGitHub" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/eigsi" target="_blank" rel="noopener noreferrer">
               <img src="src/assets/images/footer/githubRed.png" alt="github" />
             </a>
           </li>
           <li>
-            <a href="https://linkedin.com/in/tonLinkedIn" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/antoine-simon-a1105a2a2" target="_blank" rel="noopener noreferrer">
             <img src="src/assets/images/footer/linkedinRed.png" alt="linkedin" />
             </a>
           </li>
@@ -21,7 +21,7 @@ function Footer() {
             </a>
           </li>
           <li>
-            <a href="mailto:tonEmail@gmail.com">
+            <a href="mailto:antoine.simon.26@eigsi.fr">
             <img src="src/assets/images/footer/mailRed.png" alt="mail" />
 
             </a>
