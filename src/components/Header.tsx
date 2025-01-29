@@ -27,6 +27,8 @@ function Header() {
                         offset = 300;
                     } else if (targetId === 'projects') {
                         offset = 200;
+                    } else if (targetId === 'contact') {
+                        offset = 150;
                     }
                     gsap.to(window, {
                         scrollTo: target.offsetTop - offset,

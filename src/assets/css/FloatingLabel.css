@@ -1,0 +1,37 @@
+.input-container {
+    position: relative;
+    width: 35vw;
+}
+
+input, textarea {
+    padding: .8rem;
+    width: 100%;
+    border: .1rem solid #c74038;
+    font-size: 1rem;
+    outline: none;
+    resize: vertical;
+    background-color: #FBFBFB;
+    margin-bottom: 2rem;
+}
+
+label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background: #FBFBFB;
+    padding: 0 5px;
+    color: #c74038;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+/* Animation du label quand l'utilisateur remplit le champ */
+input:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: #c74038;
+}

@@ -11,6 +11,7 @@ import ShuffleIcon from '@mui/icons-material/Shuffle';
 import Titre from './Titre';
 import Skills from "./Skills";
 import Projects from "./Projects";
+import Contact from "./Contact";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -273,6 +274,7 @@ function About() {
       </section>
       <Skills ref={skillsRef} />
       <Projects ref={ProjectsRef} />
+      <Contact />
     </main>
   )
 }
