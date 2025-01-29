@@ -11,6 +11,7 @@ input, textarea {
     outline: none;
     resize: vertical;
     background-color: #FBFBFB;
+    color: black;
     margin-bottom: 2rem;
 }
 
