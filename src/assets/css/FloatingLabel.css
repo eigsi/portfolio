@@ -4,7 +4,7 @@
 }
 
 input, textarea {
-    padding: .8rem;
+    padding: 0.8rem;
     width: 100%;
     border: .1rem solid #c74038;
     font-size: 1rem;
@@ -30,8 +30,10 @@ label {
 input:focus + label,
 input:not(:placeholder-shown) + label,
 textarea:focus + label,
-textarea:not(:placeholder-shown) + label {
-    top: -10px;
+textarea:not(:placeholder-shown) + label,
+.focused {
+    top: 0;
+    transform: translateY(-100%);
     font-size: 0.8rem;
     color: #c74038;
 }

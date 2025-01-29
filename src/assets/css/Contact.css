@@ -1,4 +1,5 @@
 .contact {
+    margin-top: 10vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -17,4 +18,10 @@
     background-color: #c74038;
     border-radius: 0;
     height: auto;
+    transition: all 0.3s ease;
 }
+
+.sendButton:hover {
+    filter: brightness(110%);
+}
+
