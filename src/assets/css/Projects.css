@@ -81,7 +81,7 @@
 
 .slideEmpty {
     flex: 0 0 25%;
-    background-color: white;
+    background-color: none;
 }
 .slide {
     flex: 0 0 60%;
@@ -181,18 +181,29 @@
     display: flex;
 }
 
-.slide3 {
+.slide3, .slide2 {
     position: relative;
     padding: 0;
     height: calc(85% + 4vw);
 }
 
-.slideTop3 {
+.backgroundImg2 {
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+    margin-right: 5rem;
+}
+
+.slideTop3, .slideTop2 {
     margin: 2rem;
     width: 60%;
     align-self: self-start;
+    z-index: 10;
 }
 
+.slideTop2 {
+    width: 100%;
+}
 
 .backgroundImgContainer {
     position: absolute;

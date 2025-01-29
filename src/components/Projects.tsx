@@ -67,11 +67,13 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
             <h3>Wavee</h3>
             <p>A social platform for rating and discovering music. </p>
           </div>
-          <img
-            src="src/assets/images/wavee/wavee1.png"
-            alt="Wavee HomePage"
-            className="waveeImg"
-          />
+    
+            <img
+              src="src/assets/images/wavee/wavee1.png"
+              alt="Wavee HomePage"
+              className="waveeImg"
+            />
+          
         </div>
 
         {/* SLIDE 2 */}
@@ -79,13 +81,15 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
           <div className='slideTop slideTop2'>
             <h3>Live Through Music</h3>
             <p>Rate albums, write reviews, and see what your friends think. <br></br>Music is better when shared. </p>
-            <a href='waveemusic.com'>Start Now !</a>
+            <a href='https://waveemusic.com'>Start Now !</a>
           </div>
+          <div className='backgroundImgContainer'>
           <img
-            src="src/assets/images/wavee/wavee2.png"
+            src="src/assets/images/wavee/ipad2.png"
             alt="Wavee HomePage"
-            className="waveeImg"
+            className="backgroundImg2"
           />
+          </div>
         </div>
 
         {/* SLIDE 3 */}
