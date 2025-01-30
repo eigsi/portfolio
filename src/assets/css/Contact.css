@@ -25,12 +25,10 @@
 }
 
 .sendButton {
-    width: 5rem;
     color: #FBFBFB;
     background-color: #c74038;
     border-radius: 0;
     height: auto;
-    transition: all 0.3s ease;
 }
 
 .sendButton:hover {
