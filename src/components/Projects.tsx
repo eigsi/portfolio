@@ -30,23 +30,25 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
   // Animation SlideTop
   useEffect(() => {
-    const slideTops = slidesRef.current?.querySelectorAll('.slideTop');
-    if (!slideTops) return;
+    const container = slidesRef.current;
+    const slideTops = container?.querySelectorAll('.slideTop');
+    if (!container || !slideTops) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          } else {
-            entry.target.classList.remove('in-view');
-          }
-        });
-      },
-      {
-        threshold: 0.8, // 80% de l'élément visible
-      }
-    );
+   const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        } else {
+          entry.target.classList.remove('in-view');
+        }
+      });
+    },
+    {
+      root: container,    // On limite l'observation au scroll dans .slides
+      threshold: 0.8,
+    }
+  );
 
     slideTops.forEach((slideTop) => observer.observe(slideTop));
 
