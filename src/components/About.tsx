@@ -36,9 +36,11 @@ function About() {
   useEffect(() => {
     let ctx = gsap.context(() => {
 
+      let mm = gsap.matchMedia();
+
       // 1) Sélection et wrapping des lyrics
       const lyricsEl = document.querySelector('.lyricsRectangle') as HTMLDivElement | null;
-      let lineSpans: NodeListOf<HTMLSpanElement> | null = null; 
+      let lineSpans: NodeListOf<HTMLSpanElement> | null = null;
 
       // 2) séparer en lignes
       if (lyricsEl && lyricsEl.textContent) {
@@ -79,27 +81,56 @@ function About() {
       })
 
       // Le rectangle « slide » vers le haut
-      tl.fromTo(rectRef.current,
-        { y: 0 },
-        { y: 30, ease: 'none' },
-        0 // lance en même temps que l’animation du titre
-      )
+      mm.add("(max-width: 480px)", () => {
+        tl.fromTo(rectRef.current,
+          { y: 10 },
+          { y: 30, ease: 'none' },
+          0 // lance en même temps que l’animation du titre
+        )
+      });
+      mm.add("(min-width: 481px)", () => {
+        tl.fromTo(rectRef.current,
+          { y: 0 },
+          { y: 30, ease: 'none' },
+          0 // lance en même temps que l’animation du titre
+        )
+      });
 
-        // Le rectangle s’agrandit
-        .to(rectRef.current, {
+      mm.add("(max-width: 768px)", () => {
+        tl.to(rectRef.current, {
+          height: '70vh',
+          borderRadius: '1.5rem',
+          ease: 'none'
+        }, '<')
+          .add('rectGrowStart', '<');
+      });
+
+      mm.add("(min-width: 769px) and (max-width: 1024px)", () => {
+        tl.to(rectRef.current, {
+          height: '65vh',
+          borderRadius: '1.5rem',
+          ease: 'none'
+        }, '<')
+          .add('rectGrowStart', '<');
+      });
+
+      mm.add("(min-width: 1025px)", () => {
+        tl.to(rectRef.current, {
           height: '65vh',
           borderRadius: '2rem',
           ease: 'none'
         }, '<')
-        .add('rectGrowStart', '<')
+          .add('rectGrowStart', '<');
+      });
 
-        // Apparition des masques
-        .fromTo(
-          [".gradient-mask-top", ".gradient-mask-bot"],
-          { opacity: 0 },
-          { opacity: 1, duration: 0.5, ease: 'none' },
-          'rectGrowStart+=0.1'
-        )
+
+      // Apparition des masques
+      tl.fromTo(
+        [".gradient-mask-top", ".gradient-mask-bot"],
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, ease: 'none' },
+        'rectGrowStart+=0.1'
+      )
 
         // Apparition des lyrics
         .fromTo(

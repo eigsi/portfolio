@@ -24,7 +24,7 @@ h1 {
  h2 {
   color: #c74038;
   font-size: 4rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.06em;
 }
 
 
@@ -47,4 +47,24 @@ button:focus {
 button:focus-visible {
   outline: 2px solid #c74038; 
   border-radius: 4px;
+}
+
+
+/* ------------ 1024px ------------ */
+/* ------------ 1024px ------------ */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3.5rem;
+    letter-spacing: -0.06em;
+  }
+}
+
+
+/* ------------ 480px ------------ */
+/* ------------ 480px ------------ */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.8rem;
+    letter-spacing: -0.05em;
+  }
 }
