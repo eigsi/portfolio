@@ -41,3 +41,71 @@ li:hover {
     filter: brightness(110%);
     transition: filter 0s ease;
 }
+
+
+/* ------------ 1024px ------------ */
+/* ------------ 1024px ------------ */
+@media (max-width: 1024px) {
+
+    footer {
+        margin-top: 15vw;
+    }
+
+    .footer-links {
+        width: 17.8rem;
+    }
+    
+    .footer-links img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    li {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: .6rem;
+    }
+}
+
+/* ------------ 768px ------------ */
+/* ------------ 768px ------------ */
+@media (max-width: 768px) {
+
+    .footer-links {
+        width: 16.6rem;
+    }
+    
+    .footer-links img {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+    
+    li {
+        width: 2.2rem;
+        height: 2.2rem;
+        padding: .6rem;
+    }
+}
+
+/* ------------ 480px ------------ */
+/* ------------ 480px ------------ */
+@media (max-width: 480px) {
+
+    footer {
+        margin-top: 20vw;
+    }
+    .footer-links {
+        width: 15.8rem;
+    }
+    
+    .footer-links img {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    li {
+        width: 2rem;
+        height: 2rem;
+        padding: .6rem;
+    }
+}

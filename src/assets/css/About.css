@@ -127,3 +127,144 @@ h4 {
 .icon-play {
     background-color: #FBFBFB;
 }
+
+
+
+
+
+/* TABLETTES */
+@media (max-width: 1024px) {
+
+    .about {
+        margin-top: -3rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    
+    }
+    
+    .rectangleAbout {
+        margin-top: -3rem;
+        height: 1vh;
+        width: 50vw;
+        border-radius: 0.4rem;
+        background-color: #c74038;
+        transform-origin: center center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    
+    }
+    
+    .about h1 {
+        transform-origin: center center;
+    }
+    
+    .rectangleTitle {
+        height: 5rem;
+    }
+    
+    .about h3,
+    h4 {
+        color: #FBFBFB;
+        transform-origin: center center;
+    }
+    
+    .about h3 {
+        font-size: 1.5rem;
+    }
+    
+    .about h4 {
+        margin-top: -1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        opacity: .7;
+    }
+    
+    .topRectangle {
+        height: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .about .mask {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 3rem;
+        pointer-events: none;
+        z-index: 999;
+    }
+    
+    .line {
+        color: black;
+    }
+    
+    
+    .about .gradient-mask-top {
+        position: fixed;
+        top: 0;
+        margin-top: 5.8rem;
+        background: linear-gradient(to bottom, #c74038 0%, #c73f3800 100%);
+    }
+    
+    .about .gradient-mask-bot {
+        position: fixed;
+        bottom: 0;
+        margin-bottom: 6rem;
+        background: linear-gradient(to bottom, #c73f3800 0%, #c74038 100%);
+    }
+    
+    .lyricsRectangle {
+        font-weight: bold;
+        font-size: 1.6rem;
+        padding: 1.5rem;
+        overflow-y: hidden;
+        max-height: calc(100% - 15rem);
+        text-align: left;
+        pointer-events: none;
+        scrollbar-width: none;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    
+    .lyricsRectangle::-webkit-scrollbar {
+        display: none; 
+      }
+    
+    .botRectangle {
+        height: 6rem;
+    }
+    
+    .btnsRectangle {
+        margin-top: .8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+    
+    .icon-rectangle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .8rem;
+        color: white;
+        background-color: none;
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    
+    .icon-play {
+        background-color: #FBFBFB;
+    }
+    
+    
+    
+  }

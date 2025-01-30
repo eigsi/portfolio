@@ -34,21 +34,21 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
     const slideTops = container?.querySelectorAll('.slideTop');
     if (!container || !slideTops) return;
 
-   const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        } else {
-          entry.target.classList.remove('in-view');
-        }
-      });
-    },
-    {
-      root: container,    // On limite l'observation au scroll dans .slides
-      threshold: 0.8,
-    }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          } else {
+            entry.target.classList.remove('in-view');
+          }
+        });
+      },
+      {
+        root: container,    // On limite l'observation au scroll dans .slides
+        threshold: 0.8,
+      }
+    );
 
     slideTops.forEach((slideTop) => observer.observe(slideTop));
 
@@ -69,13 +69,13 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
             <h3>Wavee</h3>
             <p>A social platform for rating and discovering music. </p>
           </div>
-    
-            <img
-              src="src/assets/images/wavee/wavee1.png"
-              alt="Wavee HomePage"
-              className="waveeImg"
-            />
-          
+
+          <img
+            src="src/assets/images/wavee/wavee1.png"
+            alt="Wavee HomePage"
+            className="waveeImg"
+          />
+
         </div>
 
         {/* SLIDE 2 */}
@@ -85,12 +85,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
             <p>Rate albums, write reviews, and see what your friends think. <br></br>Music is better when shared. </p>
             <a href='https://waveemusic.com'>Start Now !</a>
           </div>
-          <div className='backgroundImgContainer'>
-          <img
-            src="src/assets/images/wavee/ipad2.png"
-            alt="Wavee HomePage"
-            className="backgroundImg2"
-          />
+          <div className='backgroundImgContainer2'>
           </div>
         </div>
 
@@ -119,13 +114,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
             </div>
           </div>
-          <div className='backgroundImgContainer'>
-
-            <img
-              src="src/assets/images/wavee/ipad3.png"
-              alt="waveeCollectionPage"
-              className="backgroundImg"
-            />
+          <div className='backgroundImgContainer3'>
           </div>
 
         </div>

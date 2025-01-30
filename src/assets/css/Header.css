@@ -19,7 +19,7 @@ header {
 nav {
   font-size: 1.2rem;
   font-weight: 500;
-  width: 1280px;
+  width: 80vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,4 +65,86 @@ nav a:hover {
 .right-nav:hover {
   text-decoration: underline;
   color: #c74038;
+}
+
+
+/* ------------ 1024px ------------ */
+/* ------------ 1024px ------------ */
+@media (max-width: 1024px) {
+
+  .logo {
+    height: 56px;
+    width: auto;
+  }
+  
+  .icon-download {
+    font-size: 20px;
+  }
+  
+}
+
+
+/* ------------ 768px ------------ */
+/* ------------ 768px ------------ */
+@media (max-width: 768px) {
+
+  nav {
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 85vw;
+  }
+
+  .logo {
+    height: 48px;
+    width: auto;
+  }
+
+  .icon-download {
+    font-size: 16px;
+  }
+}
+
+/* ------------ 580px ------------ */
+/* ------------ 580px ------------ */
+@media (max-width: 580px) {
+
+  .right-nav span {
+    display: none;
+  }
+
+  .icon-download {
+    font-size: 20px;
+    margin-bottom: 3px;
+  }
+}
+
+/* ------------ 480px ------------ */
+/* ------------ 480px ------------ */
+@media (max-width: 480px) {
+
+  .left-nav a {
+    display: none;
+  }
+
+  .right-nav {
+    display: flex;
+  }
+  .right-nav span {
+    display: flex;
+  }
+
+  nav {
+    font-size: 1.2rem;
+    width: 85vw;
+  }
+
+  .logo {
+    height: 52px;
+    width: auto;
+  }
+
+  .icon-download {
+    font-size: 20px;
+    margin-bottom: 3px;
+  }
 }
