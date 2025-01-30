@@ -24,7 +24,7 @@ function Header() {
                     if (targetId === 'about') {
                         offset = -300;
                     } else if (targetId === 'skills') {
-                        offset = 300;
+                        offset = 330;
                     } else if (targetId === 'projects') {
                         offset = 200;
                     } else if (targetId === 'contact') {

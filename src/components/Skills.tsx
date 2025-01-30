@@ -38,8 +38,8 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
                                     y: ref.current, // La référence de la section skills
                                     offsetY:
                                         playlist === 'playlist1'
-                                            ? window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 110 // Offset pour playlist 1
-                                            : window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 95, // Offset pour playlist 2
+                                            ? window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 135 // Offset pour playlist 1
+                                            : window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 120, // Offset pour playlist 2
                                 },
                                 duration: 0.5,
                                 ease: "power2.inOut",
