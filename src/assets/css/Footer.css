@@ -29,6 +29,9 @@ li {
     padding: .6rem;
     background-color: #c74038;
     border-radius: 30%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 li:hover {

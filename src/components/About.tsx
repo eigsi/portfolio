@@ -59,7 +59,7 @@ function About() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: aboutRef.current,
-          start: 'top+=70% top',
+          start: 'top+=2% top',
           end: '+=2000',
           scrub: true,
           pin: true,
