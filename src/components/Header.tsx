@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollToPlugin);
 function Header() {
 
     useEffect(() => {
+        let mm = gsap.matchMedia();
         // Navigation links SCROLL animation
         const links = document.querySelectorAll('.left-nav a');
         links.forEach((link) => {
@@ -27,8 +28,15 @@ function Header() {
                         offset = 330;
                     } else if (targetId === 'projects') {
                         offset = 200;
-                    } else if (targetId === 'contact') {
-                        offset = 180;
+                    }
+                    // breakpoints
+                    if (targetId === 'contact') {
+                        mm.add("(max-width: 1024px)", () => {
+                            offset = 120;
+                        });
+                        mm.add("(min-width: 1025px)", () => {
+                            offset = 170; 
+                        });
                     }
                     gsap.to(window, {
                         scrollTo: target.offsetTop - offset,

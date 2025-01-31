@@ -38,3 +38,28 @@ textarea:not(:placeholder-shown) + label,
     font-size: 0.8rem;
     color: #c74038;
 }
+
+
+/* ------------ 1024px ------------ */
+/* ------------ 1024px ------------ */
+@media (max-width: 1024px) { 
+    .input-container {
+        width: 55vw;
+    }
+}
+
+/* ------------ 768px ------------ */
+/* ------------ 768px ------------ */
+@media (max-width: 768px) { 
+    .input-container {
+        width: 65vw;
+    }
+}
+
+/* ------------ 480px ------------ */
+/* ------------ 480px ------------ */
+@media (max-width: 480px) { 
+    .input-container {
+        width: 80vw;
+    }
+}
