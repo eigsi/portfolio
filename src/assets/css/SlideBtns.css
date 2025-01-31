@@ -1,0 +1,43 @@
+.boutonsSection {
+    position: fixed;
+    bottom: 3rem;
+    display: flex;
+    justify-content: space-around;
+    width: 8rem;
+    left: calc(50% - 4rem);
+    background: #9d9b9b62;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10rem;
+    padding: .5rem;
+    height: 3rem;
+
+    /* Cachée au départ */
+    opacity: 0;
+    transition: 0.2s ease;
+    z-index: 100;
+}
+
+.btns-in-view {
+    opacity: 1;
+}
+
+.boutonsSection button {
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    color: white;
+    background: none;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-arrow {
+    padding-left: .7rem;
+}
+
+
+.boutonsSection button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}

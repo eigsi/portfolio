@@ -1,25 +1,49 @@
 import { useRef, forwardRef, useEffect } from 'react'
 import '/src/assets/css/Projects.css'
+import SlideBtns from './SlideBtns';
 
 const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
   const slidesRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const SlideBtnsRef = useRef<HTMLDivElement>(null);
 
   // Animation Titre
   useEffect(() => {
-    if (!titleRef.current) return;
+    if (!titleRef.current || !SlideBtnsRef.current) return;
 
     const updateObserver = () => {
-      const thresholdValue = window.innerWidth <= 768 ? 0.6 : 1; // L'animation démarre plus tôt sur mobile
+      const thresholdValue = window.innerWidth <= 768 ? 0.6 : 1;
+      let timeoutId: ReturnType<typeof setTimeout> | null = null;
+      let lastState = false;
 
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) {
+          const isVisible = entry.isIntersecting;
+
+          // Empêche un changement si ça oscille
+          if (isVisible === lastState) return;
+
+          if (isVisible) {
             entry.target.classList.add('in-view');
+
+            // Supprime un timeout précédent (si existant)
+            if (timeoutId) clearTimeout(timeoutId);
+
+            // Ajoute un délai avant d'afficher les boutons
+            timeoutId = setTimeout(() => {
+              SlideBtnsRef.current?.classList.add('btns-in-view');
+            }, 200);
           } else {
             entry.target.classList.remove('in-view');
+
+            // Empêche que le bouton reste affiché
+            if (timeoutId) clearTimeout(timeoutId);
+            SlideBtnsRef.current?.classList.remove('btns-in-view');
           }
+
+
+          lastState = isVisible; // Met à jour l'état
         },
         { threshold: thresholdValue }
       );
@@ -33,8 +57,8 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
     let observer = updateObserver(); // Initialisation de l'observer
 
     const handleResize = () => {
-      observer.disconnect(); 
-      observer = updateObserver(); 
+      observer.disconnect();
+      observer = updateObserver();
     };
 
     window.addEventListener('resize', handleResize);
@@ -89,6 +113,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
 
   return (
     <section className="projects" id='projects' ref={ref}>
@@ -175,6 +200,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
         <div className='slide5'>
         </div>
       </section>
+      <SlideBtns ref={SlideBtnsRef} slidesContainerRef={slidesRef} />
     </section>
   )
 });

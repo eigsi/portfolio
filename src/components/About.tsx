@@ -34,9 +34,12 @@ function About() {
   const ProjectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    if (!aboutRef.current || !titleRef.current || !rectRef.current) return;
 
+    let ctx = gsap.context(() => {
       let mm = gsap.matchMedia();
+
+      ScrollTrigger.refresh();
 
       // 1) Sélection et wrapping des lyrics
       const lyricsEl = document.querySelector('.lyricsRectangle') as HTMLDivElement | null;
@@ -234,6 +237,7 @@ function About() {
           ease: 'power4.inOut',
           duration: 1.5,
         }, '<0.6')
+
 
     }, aboutRef)
 
