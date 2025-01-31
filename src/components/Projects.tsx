@@ -151,17 +151,17 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
             <div className='slideBottom slideBottom3'>
 
               <img
-                src="src/assets/images/wavee/symfony.png"
+                src="/images/wavee/symfony.png"
                 alt="Symfony"
                 className="slide3Img"
               />
               <img
-                src="src/assets/images/wavee/kubernetes.png"
+                src="/images/wavee/kubernetes.png"
                 alt="Kubernetes"
                 className="slide3Img"
               />
               <img
-                src="src/assets/images/wavee/postgresql.png"
+                src="/images/wavee/postgresql.png"
                 alt="postgresql"
                 className="slide3Img"
               />
@@ -180,12 +180,12 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
             <p>The iOS version is on its way! Soon, discover music, rate albums, and connect with friends right from your iPhone.</p>
             <div className='logos'>
               <img
-                src="src/assets/images/wavee/swift.png"
+                src="/images/wavee/swift.png"
                 alt="Swift"
                 className="swiftLogo logosImg"
               />
               <img
-                src="src/assets/images/wavee/ios.png"
+                src="/images/wavee/ios.png"
                 alt="iOS"
                 className="iosLogo logosImg"
               />

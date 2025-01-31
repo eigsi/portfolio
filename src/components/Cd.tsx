@@ -33,7 +33,7 @@ function Cd() {
             <div className="firstRowVinyles">
                 <div className="cdCard">
                     <img
-                        src="src/assets/images/cd/aeCd.png"
+                        src="/images/cd/aeCd.png"
                         alt="Ae cd"
                         className="cd"
                     />
@@ -41,7 +41,7 @@ function Cd() {
                 </div>
                 <div className="cdCard">
                     <img
-                        src="src/assets/images/cd/blenderCd.png"
+                        src="/images/cd/blenderCd.png"
                         alt="Blender cd"
                         className="cd"
                     />
@@ -49,7 +49,7 @@ function Cd() {
                 </div>
                 <div className="cdCard cdPhotoshop">
                     <img
-                        src="src/assets/images/cd/psCd.png"
+                        src="/images/cd/psCd.png"
                         alt="Photoshop cd"
                         className="cd"
                     />
@@ -57,7 +57,7 @@ function Cd() {
                 </div>
                 <div className="cdCard">
                     <img
-                        src="src/assets/images/cd/illustratorCd.png"
+                        src="/images/cd/illustratorCd.png"
                         alt="Illustrator cd"
                         className="cd"
                     />

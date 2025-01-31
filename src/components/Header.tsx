@@ -1,5 +1,5 @@
 import '/src/assets/css/Header.css'
-import logo from '../assets/images/logo.png';
+import logo from '/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
@@ -83,7 +83,7 @@ function Header() {
                     className="right-nav"
                     onClick={() => {
                         const link = document.createElement('a');
-                        link.href = '/public/CV2025.pdf';
+                        link.href = '/CV2025.pdf';
                         link.download = 'Antoine_Simon_resume.pdf';
                         document.body.appendChild(link);
                         link.click();

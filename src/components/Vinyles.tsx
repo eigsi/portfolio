@@ -11,7 +11,7 @@ function Vinyles() {
       <div className="firstRowVinyles">
         <div className="vinyleCard">
           <img
-            src="src/assets/images/vinyles/dockerVinyle.png"
+            src="/images/vinyles/dockerVinyle.png"
             alt="Docker Vinyle"
             className="vinyle"
           />
@@ -19,7 +19,7 @@ function Vinyles() {
         </div>
         <div className="vinyleCard vinyleSql">
           <img
-            src="src/assets/images/vinyles/sqlVinyle.png"
+            src="/images/vinyles/sqlVinyle.png"
             alt="Docker Vinyle"
             className="vinyle "
           />
@@ -27,7 +27,7 @@ function Vinyles() {
         </div>
         <div className="vinyleCard">
           <img
-            src="src/assets/images/vinyles/symfonyVinyle.png"
+            src="/images/vinyles/symfonyVinyle.png"
             alt="Docker Vinyle"
             className="vinyle"
           />
@@ -35,7 +35,7 @@ function Vinyles() {
         </div>
         <div className="vinyleCard">
           <img
-            src="src/assets/images/vinyles/swiftVinyle.png"
+            src="/images/vinyles/swiftVinyle.png"
             alt="Docker Vinyle"
             className="vinyle"
           />

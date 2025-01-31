@@ -324,7 +324,7 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
             >
                 <div className='playlistTop'>
                     <div className='playlistLeft'>
-                        <img src="src/assets/images/cover/codePlaylist.png" alt="Code Playlist" />
+                        <img src="/images/cover/codePlaylist.png" alt="Code Playlist" />
                         <div className='playlistInfos'>
                             <h3>Main Coding tools 2025</h3>
                             <h4>4 Songs</h4>
@@ -345,7 +345,7 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
             >
                 <div className='playlistTop'>
                     <div className='playlistLeft'>
-                        <img src="src/assets/images/cover/logicielsPlaylist.png" alt="Logiciels Playlist" />
+                        <img src="/images/cover/logicielsPlaylist.png" alt="Logiciels Playlist" />
                         <div className='playlistInfos'>
                             <h3>Editing faster</h3>
                             <h4>4 Songs</h4>

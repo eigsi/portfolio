@@ -161,7 +161,7 @@
 .backgroundImgContainer3 {
     width: 90%;
     height: 80%;
-    background-image: url("src/assets/images/wavee/ipad3.png");
+    background-image: url("/images/wavee/ipad3.png");
     background-size: cover;
     background-position: center bottom;
     bottom: 0;
@@ -172,7 +172,7 @@
     position: absolute;
     width: 100%;
     height: 90%;
-    background-image: url("src/assets/images/wavee/ipads3.png");
+    background-image: url("/images/wavee/ipads3.png");
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -183,7 +183,7 @@
 .backgroundImgContainer1 {
     width: 70%;
     height: 60%;
-    background-image: url("src/assets/images/wavee/wavee1.png");
+    background-image: url("/images/wavee/wavee1.png");
     background-size: contain;
     background-position: center;
     top: 30%;
@@ -192,7 +192,7 @@
 .backgroundImgContainer4 {
     height: 80%;
     width: 50%;
-    background-image: url("src/assets/images/wavee/iphones.png");
+    background-image: url("/images/wavee/iphones.png");
     background-size: contain;
     background-position: center bottom;
     bottom: 0;
@@ -271,7 +271,7 @@
     .backgroundImgContainer3 {
         width: 75%;
         height: 80%;
-        background-image: url("src/assets/images/wavee/ipad3.png");
+        background-image: url("/images/wavee/ipad3.png");
     }
 
 }
@@ -357,7 +357,7 @@
     .backgroundImgContainer1 {
         width: 85%;
         height: 65%;
-        background-image: url("src/assets/images/wavee/wavee1.png");
+        background-image: url("/images/wavee/wavee1.png");
         top: 30%;
     }
 
@@ -434,13 +434,13 @@
     .backgroundImgContainer2 {
         width: 100%;
         height: 80%;
-        background-image: url("src/assets/images/wavee/ipads3.png");
+        background-image: url("/images/wavee/ipads3.png");
     }
 
     .backgroundImgContainer3 {
         width: 90%;
         height: 80%;
-        background-image: url("src/assets/images/wavee/ipad3.png");
+        background-image: url("/images/wavee/ipad3.png");
     }
 }
 
@@ -513,13 +513,13 @@
         width: 100%;
         height: 60%;
         background-size: cover;
-        background-image: url("src/assets/images/wavee/ipads3.png");
+        background-image: url("/images/wavee/ipads3.png");
     }
 
     .backgroundImgContainer3 {
         width: 90%;
         height: 60%;
-        background-image: url("src/assets/images/wavee/ipad3.png");
+        background-image: url("/images/wavee/ipad3.png");
     }
 
 }
