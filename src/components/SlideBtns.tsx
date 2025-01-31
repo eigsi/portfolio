@@ -58,7 +58,7 @@ const SlideBtns = forwardRef<HTMLDivElement, SlideBtnsProps>(({ slidesContainerR
   return (
     <section className='boutonsSection' ref={ref}>
       <button className='boutonLeft' onClick={handlePrev}>
-        <ArrowBackIos sx={{ fontSize: "2rem" }}/>
+        <ArrowBackIos className='back-arrow' sx={{ fontSize: "2rem" }}/>
       </button>
       <button className='boutonRight' onClick={handleNext}>
         <ArrowForwardIos sx={{ fontSize: "2rem" }}/>
