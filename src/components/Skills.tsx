@@ -21,72 +21,279 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
         // Identifier l'élément de la playlist cliqué
         const playlistRef = playlist === 'playlist1' ? playlist1Ref : playlist2Ref;
 
+        let mm = gsap.matchMedia();
+
         if (playlistRef.current) {
             // Si la même playlist est cliquée, réduire avec une animation fluide
             if (expandedPlaylist === playlist) {
-                gsap.to(playlistRef.current, {
-                    height: "10vw",
-                    marginBottom: "1rem",
-                    marginTop: "0",
-                    duration: 0.1,
-                    ease: "power1.InOut",
-                    onComplete: () => {
-                        // Scroll au centre de la section skills
-                        if (ref && 'current' in ref && ref.current) {
-                            gsap.to(window, {
-                                scrollTo: {
-                                    y: ref.current, // La référence de la section skills
-                                    offsetY:
-                                        playlist === 'playlist1'
-                                            ? window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 135 // Offset pour playlist 1
-                                            : window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 120, // Offset pour playlist 2
-                                },
-                                duration: 0.5,
-                                ease: "power2.inOut",
-                            });
-                        }
-                    },
+                mm.add("(max-width: 480px)", () => {
+                    gsap.to(playlistRef.current, {
+                        height: "20vw",
+                        marginBottom: "1rem",
+                        marginTop: "0",
+                        duration: 0.1,
+                        ease: "power1.InOut",
+                        onComplete: () => {
+                            // Scroll au centre de la section skills
+                            if (ref && 'current' in ref && ref.current) {
+                                gsap.to(window, {
+                                    scrollTo: {
+                                        y: ref.current, // La référence de la section skills
+                                        offsetY:
+                                            playlist === 'playlist1'
+                                                ? window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 135 // Offset pour playlist 1
+                                                : window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 120, // Offset pour playlist 2
+                                    },
+                                    duration: 0.5,
+                                    ease: "power2.inOut",
+                                });
+                            }
+                        },
+                    });
+                });
+                mm.add("(min-width: 481px) and (max-width: 768px)", () => {
+                    gsap.to(playlistRef.current, {
+                        height: "15vw",
+                        marginBottom: "1rem",
+                        marginTop: "0",
+                        duration: 0.1,
+                        ease: "power1.InOut",
+                        onComplete: () => {
+                            // Scroll au centre de la section skills
+                            if (ref && 'current' in ref && ref.current) {
+                                gsap.to(window, {
+                                    scrollTo: {
+                                        y: ref.current, // La référence de la section skills
+                                        offsetY:
+                                            playlist === 'playlist1'
+                                                ? window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 135 // Offset pour playlist 1
+                                                : window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 120, // Offset pour playlist 2
+                                    },
+                                    duration: 0.5,
+                                    ease: "power2.inOut",
+                                });
+                            }
+                        },
+                    });
+                });
+                mm.add("(min-width: 769px) and (max-width: 1024px)", () => {
+                    gsap.to(playlistRef.current, {
+                        height: "11vw",
+                        marginBottom: "1rem",
+                        marginTop: "0",
+                        duration: 0.1,
+                        ease: "power1.InOut",
+                        onComplete: () => {
+                            // Scroll au centre de la section skills
+                            if (ref && 'current' in ref && ref.current) {
+                                gsap.to(window, {
+                                    scrollTo: {
+                                        y: ref.current, // La référence de la section skills
+                                        offsetY:
+                                            playlist === 'playlist1'
+                                                ? window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 135 // Offset pour playlist 1
+                                                : window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 120, // Offset pour playlist 2
+                                    },
+                                    duration: 0.5,
+                                    ease: "power2.inOut",
+                                });
+                            }
+                        },
+                    });
+                });
+                mm.add("(min-width: 1025px)", () => {
+                    gsap.to(playlistRef.current, {
+                        height: "10vw",
+                        marginBottom: "1rem",
+                        marginTop: "0",
+                        duration: 0.1,
+                        ease: "power1.InOut",
+                        onComplete: () => {
+                            // Scroll au centre de la section skills
+                            if (ref && 'current' in ref && ref.current) {
+                                gsap.to(window, {
+                                    scrollTo: {
+                                        y: ref.current, // La référence de la section skills
+                                        offsetY:
+                                            playlist === 'playlist1'
+                                                ? window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 135 // Offset pour playlist 1
+                                                : window.innerHeight / 2 - ref.current.getBoundingClientRect().height / 2 + 120, // Offset pour playlist 2
+                                    },
+                                    duration: 0.5,
+                                    ease: "power2.inOut",
+                                });
+                            }
+                        },
+                    });
                 });
                 setExpandedPlaylist(null);
             } else {
-                gsap.to(playlistRef.current, {
-                    height: "25vw",
-                    marginBottom: playlist === 'playlist1' ? "3rem" : "0",
-                    marginTop: playlist === 'playlist1' ? "0" : "3rem",
-                    duration: 0.2,
-                    ease: "power4.out",
-                    onComplete: () => {
-                        // scroll
-                        if (playlistRef.current) {
+                mm.add("(max-width: 480px)", () => {
+                    gsap.to(playlistRef.current, {
+                        height: playlist === 'playlist1' ? "55vw" : "52vw",
+                        marginBottom: playlist === 'playlist1' ? "3rem" : "0",
+                        marginTop: playlist === 'playlist1' ? "0" : "3rem",
+                        duration: 0.2,
+                        ease: "power4.out",
+                        onComplete: () => {
+                            // scroll
+                            if (playlistRef.current) {
 
-                            let offset = window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2;
-                            if (expandedPlaylist && expandedPlaylist !== playlist) {
-                                const prevRef = expandedPlaylist === 'playlist1' ? playlist1Ref : playlist2Ref;
+                                let offset = window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2;
+                                if (expandedPlaylist && expandedPlaylist !== playlist) {
+                                    const prevRef = expandedPlaylist === 'playlist1' ? playlist1Ref : playlist2Ref;
 
-                                if (prevRef.current) {
-                                    // Ajustement spécifique basé sur la playlist qui se ferme
-                                    let manualOffsetAdjustment = 0;
-                            
-                                    if (expandedPlaylist === 'playlist1') {
-                                        manualOffsetAdjustment = 160; 
-                                    } else if (expandedPlaylist === 'playlist2') {
-                                        manualOffsetAdjustment = 0; 
+                                    if (prevRef.current) {
+                                        // Ajustement spécifique basé sur la playlist qui se ferme
+                                        let manualOffsetAdjustment = 0;
+
+                                        if (expandedPlaylist === 'playlist1') {
+                                            manualOffsetAdjustment = 160;
+                                        } else if (expandedPlaylist === 'playlist2') {
+                                            manualOffsetAdjustment = 0;
+                                        }
+
+                                        offset += manualOffsetAdjustment;
                                     }
-                            
-                                    offset += manualOffsetAdjustment;
                                 }
-                            }
-                            gsap.to(window, {
+                                gsap.to(window, {
 
-                                scrollTo: {
-                                    y: playlistRef.current,
-                                    offsetY: offset,
-                                },
-                                duration: .5,
-                                ease: "power2.inOut",
-                            });
-                        }
-                    },
+                                    scrollTo: {
+                                        y: playlistRef.current,
+                                        offsetY: offset,
+                                    },
+                                    duration: .5,
+                                    ease: "power2.inOut",
+                                });
+                            }
+                        },
+                    });
+                });
+
+                mm.add("(min-width: 481px) and (max-width: 768px)", () => {
+                    gsap.to(playlistRef.current, {
+                        height: playlist === 'playlist1' ? "40vw" : "35vw",
+                        marginBottom: playlist === 'playlist1' ? "3rem" : "0",
+                        marginTop: playlist === 'playlist1' ? "0" : "3rem",
+                        duration: 0.2,
+                        ease: "power4.out",
+                        onComplete: () => {
+                            // scroll
+                            if (playlistRef.current) {
+
+                                let offset = window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2;
+                                if (expandedPlaylist && expandedPlaylist !== playlist) {
+                                    const prevRef = expandedPlaylist === 'playlist1' ? playlist1Ref : playlist2Ref;
+
+                                    if (prevRef.current) {
+                                        // Ajustement spécifique basé sur la playlist qui se ferme
+                                        let manualOffsetAdjustment = 0;
+
+                                        if (expandedPlaylist === 'playlist1') {
+                                            manualOffsetAdjustment = 160;
+                                        } else if (expandedPlaylist === 'playlist2') {
+                                            manualOffsetAdjustment = 0;
+                                        }
+
+                                        offset += manualOffsetAdjustment;
+                                    }
+                                }
+                                gsap.to(window, {
+
+                                    scrollTo: {
+                                        y: playlistRef.current,
+                                        offsetY: offset,
+                                    },
+                                    duration: .5,
+                                    ease: "power2.inOut",
+                                });
+                            }
+                        },
+                    });
+                });
+
+                mm.add("(min-width: 769px) and (max-width: 1024px)", () => {
+                    gsap.to(playlistRef.current, {
+                        height: playlist === 'playlist1' ? "30vw" : "27vw",
+                        marginBottom: playlist === 'playlist1' ? "3rem" : "0",
+                        marginTop: playlist === 'playlist1' ? "0" : "3rem",
+                        duration: 0.2,
+                        ease: "power4.out",
+                        onComplete: () => {
+                            // scroll
+                            if (playlistRef.current) {
+
+                                let offset = window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2;
+                                if (expandedPlaylist && expandedPlaylist !== playlist) {
+                                    const prevRef = expandedPlaylist === 'playlist1' ? playlist1Ref : playlist2Ref;
+
+                                    if (prevRef.current) {
+                                        // Ajustement spécifique basé sur la playlist qui se ferme
+                                        let manualOffsetAdjustment = 0;
+
+                                        if (expandedPlaylist === 'playlist1') {
+                                            manualOffsetAdjustment = 160;
+                                        } else if (expandedPlaylist === 'playlist2') {
+                                            manualOffsetAdjustment = 0;
+                                        }
+
+                                        offset += manualOffsetAdjustment;
+                                    }
+                                }
+                                gsap.to(window, {
+
+                                    scrollTo: {
+                                        y: playlistRef.current,
+                                        offsetY: offset,
+                                    },
+                                    duration: .5,
+                                    ease: "power2.inOut",
+                                });
+                            }
+                        },
+                    });
+                });
+
+                mm.add("(min-width: 1025px)", () => {
+                    gsap.to(playlistRef.current, {
+                        height: "25vw",
+                        marginBottom: playlist === 'playlist1' ? "3rem" : "0",
+                        marginTop: playlist === 'playlist1' ? "0" : "3rem",
+                        duration: 0.2,
+                        ease: "power4.out",
+                        onComplete: () => {
+                            // scroll
+                            if (playlistRef.current) {
+
+                                let offset = window.innerHeight / 2 - playlistRef.current.getBoundingClientRect().height / 2;
+                                if (expandedPlaylist && expandedPlaylist !== playlist) {
+                                    const prevRef = expandedPlaylist === 'playlist1' ? playlist1Ref : playlist2Ref;
+
+                                    if (prevRef.current) {
+                                        // Ajustement spécifique basé sur la playlist qui se ferme
+                                        let manualOffsetAdjustment = 0;
+
+                                        if (expandedPlaylist === 'playlist1') {
+                                            manualOffsetAdjustment = 160;
+                                        } else if (expandedPlaylist === 'playlist2') {
+                                            manualOffsetAdjustment = 0;
+                                        }
+
+                                        offset += manualOffsetAdjustment;
+                                    }
+                                }
+                                gsap.to(window, {
+
+                                    scrollTo: {
+                                        y: playlistRef.current,
+                                        offsetY: offset,
+                                    },
+                                    duration: .5,
+                                    ease: "power2.inOut",
+                                });
+                            }
+                        },
+                    });
                 });
                 if (expandedPlaylist) {
                     const prevRef = expandedPlaylist === 'playlist1' ? playlist1Ref : playlist2Ref;
@@ -120,13 +327,12 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
                         <img src="src/assets/images/cover/codePlaylist.png" alt="Code Playlist" />
                         <div className='playlistInfos'>
                             <h3>Main Coding tools 2025</h3>
-                            <h4>8 Songs</h4>
+                            <h4>4 Songs</h4>
+                            <h5>3 Songs</h5>
                         </div>
                     </div>
                     <div className='playlistRight'>
-                        <PlayArrowIcon
-                            style={{ fontSize: '40px', color: '#fff0f0', background: '#c73f38', padding: '.4rem', borderRadius: '50%' }}
-                            className={expandedPlaylist === 'playlist1' ? 'rotated' : ''}
+                        <PlayArrowIcon  className={`play-button ${expandedPlaylist === 'playlist1' ? 'rotated' : ''}`}
                         />
                     </div>
                 </div>
@@ -143,12 +349,11 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
                         <div className='playlistInfos'>
                             <h3>Editing faster</h3>
                             <h4>4 Songs</h4>
+                            <h5>3 Songs</h5>
                         </div>
                     </div>
                     <div className='playlistRight'>
-                        <PlayArrowIcon
-                            style={{ fontSize: '40px', color: '#fff0f0', background: '#c73f38', padding: '.4rem', borderRadius: '50%' }}
-                            className={expandedPlaylist === 'playlist2' ? 'rotated' : ''}
+                        <PlayArrowIcon  className={`play-button ${expandedPlaylist === 'playlist1' ? 'rotated' : ''}`}
                         />
                     </div>
                 </div>

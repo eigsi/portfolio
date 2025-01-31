@@ -15,18 +15,11 @@ body {
   padding: 2em;
 }
 
-h1 {
-  color: #c74038;
-  font-size: 4rem;
-  letter-spacing: -0.05em;
-}
-
- h2 {
+h1, h2 {
   color: #c74038;
   font-size: 4rem;
   letter-spacing: -0.06em;
 }
-
 
 .gradient-mask {
   position: fixed;
@@ -53,18 +46,27 @@ button:focus-visible {
 /* ------------ 1024px ------------ */
 /* ------------ 1024px ------------ */
 @media (max-width: 1024px) {
-  h1 {
+  h1, h2 {
     font-size: 3.5rem;
-    letter-spacing: -0.06em;
   }
+
+}
+
+/* ------------ 768px ------------ */
+/* ------------ 768px ------------ */
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 3rem;
+  }
+
 }
 
 
 /* ------------ 480px ------------ */
 /* ------------ 480px ------------ */
 @media (max-width: 480px) {
-  h1 {
-    font-size: 2.8rem;
+  h1, h2 {
+    font-size: 2.7rem;
     letter-spacing: -0.05em;
   }
 }

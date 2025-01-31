@@ -17,11 +17,11 @@ function Vinyles() {
           />
           <h3>Docker</h3>
         </div>
-        <div className="vinyleCard">
+        <div className="vinyleCard vinyleSql">
           <img
             src="src/assets/images/vinyles/sqlVinyle.png"
             alt="Docker Vinyle"
-            className="vinyle"
+            className="vinyle "
           />
           <h3>PostgreSQL</h3>
         </div>

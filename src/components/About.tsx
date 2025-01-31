@@ -81,14 +81,14 @@ function About() {
       })
 
       // Le rectangle « slide » vers le haut
-      mm.add("(max-width: 480px)", () => {
+      mm.add("(max-width: 768px)", () => {
         tl.fromTo(rectRef.current,
           { y: 10 },
           { y: 30, ease: 'none' },
           0 // lance en même temps que l’animation du titre
         )
       });
-      mm.add("(min-width: 481px)", () => {
+      mm.add("(min-width: 769px)", () => {
         tl.fromTo(rectRef.current,
           { y: 0 },
           { y: 30, ease: 'none' },

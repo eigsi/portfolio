@@ -1,4 +1,4 @@
-.firstRowVinyles{
+.firstRowVinyles {
   width: 50vw;
   display: flex;
   justify-content: space-between;
@@ -28,8 +28,10 @@
 
 /* ----- ANIMATION -------- */
 
-.vinyle, .cd {
-  animation: spinPause 20s ease-in-out infinite; /* Une seule animation combinée */
+.vinyle,
+.cd {
+  animation: spinPause 20s ease-in-out infinite;
+  /* Une seule animation combinée */
 }
 
 /* Combine spin et pause en une seule animation */
@@ -37,8 +39,10 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
-    transform: rotate(360deg); /* Pause */
+    transform: rotate(360deg);
+    /* Pause */
   }
 }
 
@@ -72,4 +76,132 @@
 .vinyleCard h3,
 .cdCard h3 {
   font-weight: 500;
+}
+
+
+/* ------------ 1024px ------------ */
+/* ------------ 1024px ------------ */
+@media (max-width: 1024px) {
+  .firstRowVinyles {
+    width: 55vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -1rem;
+    transition: all ease 0.3s;
+
+  }
+
+  .vinyles {
+    margin-top: 12vw;
+    margin-bottom: 1rem;
+  }
+
+  .vinyle,
+  .cd {
+    margin-top: 1rem;
+    margin-left: .8rem;
+    z-index: 3;
+    width: 11vw;
+    height: 11vw;
+  }
+
+  .cd {
+    margin-top: 0.2rem;
+    width: 11.5vw;
+    height: 11.5vw;
+    margin-left: 0.5rem;
+    margin-right: .2rem;
+    margin-bottom: -1rem;
+  }
+}
+
+
+/* ------------ 768px ------------ */
+/* ------------ 768px ------------ */
+@media (max-width: 768px) {
+  .firstRowVinyles {
+    width: 78vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -1rem;
+    transition: all ease 0.3s;
+
+  }
+
+  .vinyles {
+    margin-top: 16vw;
+    margin-bottom: 1rem;
+  }
+
+  .vinyle,
+  .cd {
+    margin-top: 1rem;
+    margin-left: .8rem;
+    z-index: 3;
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .vinyleCard,
+  .cdCard {
+    font-size: .9rem;
+  }
+
+  .cd {
+    margin-top: 0.4rem;
+    width: 13vw;
+    height: 13vw;
+    margin-left: 0.5rem;
+    margin-right: .2rem;
+    margin-bottom: -1rem;
+  }
+}
+
+/* ------------ 480px ------------ */
+/* ------------ 480px ------------ */
+@media (max-width: 480px) {
+  .firstRowVinyles {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -1rem;
+    transition: all ease 0.3s;
+
+  }
+
+  .vinyles {
+    margin-top: 23vw;
+    margin-bottom: 1rem;
+  }
+
+  .vinyle,
+  .cd {
+    margin-top: 1rem;
+
+    z-index: 3;
+    width: 20vw;
+    height: 20vw;
+  }
+
+
+  .vinyleSql, .cdPhotoshop {
+    display: none;
+  }
+
+  .vinyleCard,
+  .cdCard {
+    font-size: .8rem;
+  }
+
+  .cd {
+    margin-top: 0.4rem;
+    width: 22vw;
+    height: 22vw;
+    margin-left: 0.5rem;
+    margin-right: .2rem;
+    margin-bottom: -1rem;
+  }
 }

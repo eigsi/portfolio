@@ -47,7 +47,7 @@ function Cd() {
                     />
                     <h3>Blender</h3>
                 </div>
-                <div className="cdCard">
+                <div className="cdCard cdPhotoshop">
                     <img
                         src="src/assets/images/cd/psCd.png"
                         alt="Photoshop cd"

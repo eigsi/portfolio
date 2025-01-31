@@ -95,3 +95,214 @@
   .playlist:hover .secondRowVinyles {
     width: 52vw;
   }
+
+
+  .play-button {
+    width: 2.4rem !important;
+    height: 2.4rem !important;
+    color: #fff0f0;
+    background: #c73f38;
+    padding: 0.4rem;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  .playlistInfos h5 {
+    display: none;
+  }
+
+  /* ------------ 1024px ------------ */
+  /* ------------ 1024px ------------ */
+  @media (max-width: 1024px) {
+    .skills {
+      margin-top: -90vh;
+    }
+
+    img {
+      width: 11vw;
+      height: 11vw;
+      margin-right: 1rem;
+    }
+
+    .playlistTop {
+      display: flex;
+      height: 11vw;
+    }
+
+    .playlistLeft {
+      display: flex;
+    }
+
+    .playlistRight {
+      height: 11vw;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .playlistInfos {
+      height: 11vw;
+    }
+
+    .playlistInfos h3 {
+      font-size: 1.5rem;
+    }
+
+    .playlistInfos h4 {
+      font-size: 1.3rem;
+    }
+
+    .playlist {
+      width: 55vw;
+      height: 11vw;
+    }
+
+    .playlist:hover {
+      width: 57vw;
+
+    }
+
+    .playlist:hover .firstRowVinyles,
+    .playlist:hover .secondRowVinyles {
+      width: 57vw;
+    }
+
+    .play-button {
+      width: 2rem !important;
+      height: 2rem !important;
+    }
+
+  }
+
+
+  /* ------------ 768px ------------ */
+  /* ------------ 768px ------------ */
+  @media (max-width: 768px) {
+    .skills {
+      margin-top: -95vh;
+    }
+
+    img {
+      width: 15vw;
+      height: 15vw;
+      margin-right: 1rem;
+    }
+
+    .playlistTop {
+      display: flex;
+      height: 15vw;
+    }
+
+    .playlistLeft {
+      display: flex;
+    }
+
+    .playlistRight {
+      height: 15vw;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .playlistInfos {
+      height: 15vw;
+    }
+
+    .playlistInfos h3 {
+      font-size: 1.4rem;
+    }
+
+    .playlistInfos h4 {
+      font-size: 1.2rem;
+    }
+
+    .playlist {
+      width: 78vw;
+      height: 15vw;
+    }
+
+    .playlist:hover {
+      width: 80vw;
+
+    }
+
+    .playlist:hover .firstRowVinyles,
+    .playlist:hover .secondRowVinyles {
+      width: 80vw;
+    }
+
+    .play-button {
+      width: 1.7rem !important;
+      height: 1.7rem !important;
+    }
+
+  }
+
+  /* ------------ 480px ------------ */
+  /* ------------ 480px ------------ */
+  @media (max-width: 480px) {
+    .skills {
+      margin-top: -90vh;
+    }
+
+    img {
+      width: 20vw;
+      height: 20vw;
+      margin-right: 1rem;
+    }
+
+    .playlistTop {
+      display: flex;
+      height: 20vw;
+    }
+
+    .playlistLeft {
+      display: flex;
+    }
+
+    .playlistRight {
+      height: 20vw;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .playlistInfos {
+      height: 20vw;
+    }
+
+    .playlistInfos h3 {
+      font-size: 1.1rem;
+    }
+
+    .playlistInfos h4 {
+      display: none;
+    }
+    .playlistInfos h5 {
+      display: block;
+      margin: 0rem;
+      font-size: 1rem;
+      color: #c73f38;
+      opacity: 0.7;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+    }
+
+    .playlist {
+      width: 80vw;
+      height: 20vw;
+    }
+
+    .playlist:hover {
+      width: 82vw;
+
+    }
+
+    .playlist:hover .firstRowVinyles,
+    .playlist:hover .secondRowVinyles {
+      width: 82vw;
+    }
+
+    .play-button {
+      width: 1.2rem !important;
+      height: 1.2rem !important;
+    }
+
+  }
