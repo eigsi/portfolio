@@ -68,5 +68,6 @@ button:focus-visible {
   h1, h2 {
     font-size: 2.7rem;
     letter-spacing: -0.05em;
+    padding: 2rem;
   }
 }

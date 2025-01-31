@@ -8,7 +8,11 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
   // Animation Titre
   useEffect(() => {
-    if (titleRef.current) {
+    if (!titleRef.current) return;
+
+    const updateObserver = () => {
+      const thresholdValue = window.innerWidth <= 768 ? 0.6 : 1; // L'animation démarre plus tôt sur mobile
+
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -17,15 +21,28 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
             entry.target.classList.remove('in-view');
           }
         },
-        {
-          threshold: 1,
-        }
+        { threshold: thresholdValue }
       );
 
-      observer.observe(titleRef.current);
+      if (titleRef.current) {
+        observer.observe(titleRef.current);
+      }
+      return observer;
+    };
 
-      return () => observer.disconnect();
-    }
+    let observer = updateObserver(); // Initialisation de l'observer
+
+    const handleResize = () => {
+      observer.disconnect(); 
+      observer = updateObserver(); 
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   // Animation SlideTop
@@ -34,27 +51,42 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
     const slideTops = container?.querySelectorAll('.slideTop');
     if (!container || !slideTops) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          } else {
-            entry.target.classList.remove('in-view');
-          }
-        });
-      },
-      {
-        root: container,    // On limite l'observation au scroll dans .slides
-        threshold: 0.8,
-      }
-    );
+    const updateObserver = () => {
+      const thresholdValue = window.innerWidth <= 768 ? 0.5 : 0.8; // Plus bas sur mobile
 
-    slideTops.forEach((slideTop) => observer.observe(slideTop));
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+            } else {
+              entry.target.classList.remove('in-view');
+            }
+          });
+        },
+        {
+          root: container, // On limite l'observation au scroll dans .slides
+          threshold: thresholdValue,
+        }
+      );
 
-    // Nettoyage
+      slideTops.forEach((slideTop) => observer.observe(slideTop));
+
+      return observer;
+    };
+
+    let observer = updateObserver(); // Initialisation de l'observer
+
+    const handleResize = () => {
+      observer.disconnect(); // Supprime l'ancien observer
+      observer = updateObserver(); // Crée un nouvel observer avec le bon threshold
+    };
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
       observer.disconnect();
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -70,11 +102,8 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
             <p>A social platform for rating and discovering music. </p>
           </div>
 
-          <img
-            src="src/assets/images/wavee/wavee1.png"
-            alt="Wavee HomePage"
-            className="waveeImg"
-          />
+          <div className='backgroundImg backgroundImgContainer1'>
+          </div>
 
         </div>
 
@@ -85,7 +114,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
             <p>Rate albums, write reviews, and see what your friends think. <br></br>Music is better when shared. </p>
             <a href='https://waveemusic.com'>Start Now !</a>
           </div>
-          <div className='backgroundImgContainer2'>
+          <div className='backgroundImg backgroundImgContainer2'>
           </div>
         </div>
 
@@ -114,40 +143,36 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
             </div>
           </div>
-          <div className='backgroundImgContainer3'>
+          <div className='backgroundImg backgroundImgContainer3'>
           </div>
 
         </div>
 
         {/* SLIDE 4 */}
-        <div className='lastSlide'>
-          <div className='slide slide4'>
-            <div className='slideTop slideTop4'>
-              <h3>Coming to iOS</h3>
-              <p>The iOS version is on its way! Soon, discover music, rate albums, and connect with friends right from your iPhone.</p>
-              <div className='logos'>
-                <img
-                  src="src/assets/images/wavee/swift.png"
-                  alt="Swift"
-                  className="swiftLogo logosImg"
-                />
-                <img
-                  src="src/assets/images/wavee/ios.png"
-                  alt="iOS"
-                  className="iosLogo logosImg"
-                />
-              </div>
-            </div>
-            <div className='slideRight'>
+        <div className='slide slide4'>
+          <div className='slideTop slideTop4'>
+            <h3>Coming to iOS</h3>
+            <p>The iOS version is on its way! Soon, discover music, rate albums, and connect with friends right from your iPhone.</p>
+            <div className='logos'>
               <img
-                src="src/assets/images/wavee/iphones.png"
-                alt="Wavee HomePage"
-                className="iphones"
+                src="src/assets/images/wavee/swift.png"
+                alt="Swift"
+                className="swiftLogo logosImg"
+              />
+              <img
+                src="src/assets/images/wavee/ios.png"
+                alt="iOS"
+                className="iosLogo logosImg"
               />
             </div>
           </div>
-          <div className='slideEmpty'>
+          <div className='backgroundImg backgroundImgContainer4'>
           </div>
+        </div>
+
+
+        {/* SLIDE 5 */}
+        <div className='slide5'>
         </div>
       </section>
     </section>

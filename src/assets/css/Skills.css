@@ -240,7 +240,7 @@
   /* ------------ 480px ------------ */
   @media (max-width: 480px) {
     .skills {
-      margin-top: -90vh;
+      margin-top: -95vh;
     }
 
     img {

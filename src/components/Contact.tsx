@@ -15,22 +15,30 @@ function Contact() {
     // Animation Section
     useEffect(() => {
         if (formRef.current) {
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                    } else {
-                        entry.target.classList.remove('in-view');
-                    }
-                },
-                {
-                    threshold: 0.5,
+            const updateObserver = () => {
+                const thresholdValue = window.innerWidth <= 768 ? 0.25 : 0.5; // Plus sensible sur mobile
+                
+                const observer = new IntersectionObserver(
+                    ([entry]) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                        } else {
+                            entry.target.classList.remove('in-view');
+                        }
+                    },
+                    { threshold: thresholdValue }
+                );
+    
+                if (formRef.current) {
+                    observer.observe(formRef.current);
                 }
-            );
+                return () => observer.disconnect();
+            };
+            updateObserver();
 
-            observer.observe(formRef.current);
+            window.addEventListener('resize', updateObserver); // Met à jour en cas de redimensionnement
 
-            return () => observer.disconnect();
+            return () => window.removeEventListener('resize', updateObserver);
         }
     }, []);
 

@@ -42,13 +42,16 @@
 /* ------------ 1024px ------------ */
 @media (max-width: 1024px) { 
     .contact {
-        margin-top: 0vh;
+        margin-top: 3vh;
     }
     
 }
 
 
-/* ------------ 480px ------------ */
-/* ------------ 480px ------------ */
-@media (max-width: 480px) { 
+/* ------------ 768px ------------ */
+/* ------------ 768px ------------ */
+@media (max-width: 768px) { 
+    .contact {
+        margin-top: 5vh;
+    }
 }
