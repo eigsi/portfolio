@@ -12,7 +12,6 @@ function Contact() {
     const formMessageRef = useRef<HTMLDivElement>(null);
     const SCROLL_OFFSET = 200;
 
-
     // Animation Section
     useEffect(() => {
         if (formRef.current) {
