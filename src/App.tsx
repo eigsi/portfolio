@@ -22,12 +22,13 @@ function App() {
     let resizeTimer: ReturnType<typeof setTimeout> | null = null;
 
     const handleResize = () => {
+      if (window.innerWidth < 768) return; 
       if (resizeTimer) clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        // ICI on va incrémenter aboutKey
         setAboutKey((prev) => prev + 1);
-      }, 300); // 300ms de délai après la fin du resize
+      }, 300);
     };
+
 
     window.addEventListener("resize", handleResize);
 

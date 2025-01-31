@@ -522,4 +522,11 @@
         background-image: url("/images/wavee/ipad3.png");
     }
 
+    .backgroundImgContainer1 {
+        width: 90%;
+        height: 75%;
+        background-image: url("/images/wavee/wavee1.png");
+        top: 30%;
+    }
+
 }
