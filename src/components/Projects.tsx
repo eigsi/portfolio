@@ -7,6 +7,29 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
   const slidesRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const SlideBtnsRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!triggerRef.current || !SlideBtnsRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const isVisible = entry.isIntersecting;
+
+        if (isVisible) {
+          SlideBtnsRef.current?.classList.add("btns-in-view");
+        } else {
+          SlideBtnsRef.current?.classList.remove("btns-in-view");
+        }
+      },
+      { threshold: 0.9 }
+    );
+
+    observer.observe(triggerRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
 
   // Animation Titre
   useEffect(() => {
@@ -14,7 +37,6 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
     const updateObserver = () => {
       const thresholdValue = window.innerWidth <= 768 ? 0.6 : 1;
-      let timeoutId: ReturnType<typeof setTimeout> | null = null;
       let lastState = false;
 
       const observer = new IntersectionObserver(
@@ -27,19 +49,8 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
           if (isVisible) {
             entry.target.classList.add('in-view');
 
-            // Supprime un timeout précédent (si existant)
-            if (timeoutId) clearTimeout(timeoutId);
-
-            // Ajoute un délai avant d'afficher les boutons
-            timeoutId = setTimeout(() => {
-              SlideBtnsRef.current?.classList.add('btns-in-view');
-            }, 200);
           } else {
             entry.target.classList.remove('in-view');
-
-            // Empêche que le bouton reste affiché
-            if (timeoutId) clearTimeout(timeoutId);
-            SlideBtnsRef.current?.classList.remove('btns-in-view');
           }
 
 
@@ -53,6 +64,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
       }
       return observer;
     };
+
 
     let observer = updateObserver(); // Initialisation de l'observer
 
@@ -118,6 +130,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <section className="projects" id='projects' ref={ref}>
       <h2 ref={titleRef}>My Biggest Project Yet</h2>
+      <div ref={triggerRef} className="trigger"></div>
       <section className='slides' ref={slidesRef}>
 
         {/* SLIDE 1 */}
