@@ -264,7 +264,7 @@ function About() {
           <div className='topRectangle'>
 
             <div className='rectanlgeTitle'>
-              <h3>Introduction: About me</h3>
+              <h3>A Little Bit About Me</h3>
               <h4>Antoine Simon</h4>
             </div>
           </div>
@@ -273,13 +273,11 @@ function About() {
           {/* LYRICS */}
           <div id="about" className='lyricsRectangle'>
             <p>
-              Hi, I’m Antoine SIMON, a 4th-year engineering student specializing in Computer Science, currently seeking a 2–3 month internship starting in early June.<br></br>
-
-              I love blending creativity with logic and hard challenges, which is why I’m having so much fun developing this portfolio and my other projects.<br></br>
-
-              I’m always looking for new ways to achieve beautiful results or solve complex problems.<br></br>
-
-              Thank you for your time, I hope you will enjoy your journey!
+              Hello, I am Antoine SIMON, a 4th-year engineering student specialised in Computer Science, currently seeking a 2–3 month internship starting in early June.<br></br>
+              What motivates me the most in life is expressing my creativity and blending it with technical challenges. I love facing difficult problems, and I am the type to give it my all to bring ideas to life, no matter how long or hard it is.<br></br>
+              I’m always looking to learn new tools so I can use the best way to achieve my projects. The more I learn, the better I can think and create.<br></br>
+              That’s also why I love to exchange ideas and collaborate with people. To me, that’s the best way to progress and come up with great ideas.<br></br>
+              Thank you so much for your time, I hope you will enjoy my website !
             </p>
 
           </div>
