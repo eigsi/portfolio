@@ -39,6 +39,14 @@ function Cd() {
                     />
                     <h3>After Effects</h3>
                 </div>
+                <div className="cdCard cdPhotoshop">
+                    <img
+                        src="/images/cd/xdCd.png"
+                        alt="Photoshop cd"
+                        className="cd"
+                    />
+                    <h3>Adobe XD</h3>
+                </div>
                 <div className="cdCard">
                     <img
                         src="/images/cd/blenderCd.png"
@@ -46,14 +54,6 @@ function Cd() {
                         className="cd"
                     />
                     <h3>Blender</h3>
-                </div>
-                <div className="cdCard cdPhotoshop">
-                    <img
-                        src="/images/cd/psCd.png"
-                        alt="Photoshop cd"
-                        className="cd"
-                    />
-                    <h3>Photoshop</h3>
                 </div>
                 <div className="cdCard">
                     <img

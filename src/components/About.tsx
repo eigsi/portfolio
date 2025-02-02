@@ -273,11 +273,12 @@ function About() {
           {/* LYRICS */}
           <div id="about" className='lyricsRectangle'>
             <p>
-              Hello, I am Antoine SIMON, a 4th-year engineering student specialised in Computer Science, currently seeking a 2–3 month internship starting in early June.<br></br>
-              What motivates me the most in life is expressing my creativity and blending it with technical challenges. I love facing difficult problems, and I am the type to give it my all to bring ideas to life, no matter how long or hard it is.<br></br>
-              I’m always looking to learn new tools so I can use the best way to achieve my projects. The more I learn, the better I can think and create.<br></br>
-              That’s also why I love to exchange ideas and collaborate with people. To me, that’s the best way to progress and come up with great ideas.<br></br>
-              Thank you so much for your time, I hope you will enjoy my website !
+              Hi, I am Antoine SIMON, a 4th-year engineering student specialised in Computer Science.<br></br>
+              What motivates me the most is expressing my creativity and attention to detail by building highly efficient applications while ensuring a seamless user experience.<br></br>
+              I love solving complex problems, and I am the type to give it my all to bring my ideas to life, no matter how long or hard it is.<br></br>
+              I’m always looking for new tools to learn to improve how I work on my projects. The more I learn, the better I can think and create.<br></br>
+              That’s also why I love working in a team. Without exchanging ideas, how could I be sure I’m starting on the best possible approach ?<br></br>
+              Thank you so much for your time, and I hope you will enjoy exploring my website !
             </p>
 
           </div>
