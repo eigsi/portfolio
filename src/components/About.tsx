@@ -252,6 +252,62 @@ function About() {
   }, [])
 
   // -------------------------------------
+  // ------------- PLAY BTN ---------------
+  // -------------------------------------
+
+  const handleReplayClick = () => {
+
+    const target = document.getElementById("about");
+    if (target) {
+      const offset = -330;
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: target.offsetTop - offset,
+        ease: 'power2.out'
+      });
+    }
+  };
+
+  const handlePreviousClick = () => {
+
+    const target = document.getElementById("about");
+    if (target) {
+      const offset = 300;
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: target.offsetTop - offset,
+        ease: 'power2.out'
+      });
+    }
+  };
+
+  const handleShuffleClick = () => {
+
+    const target = document.getElementById("about");
+    if (target) {
+      const offset = - (Math.floor(Math.random() * (800 - 280 + 1)) + 280);
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: target.offsetTop - offset,
+        ease: 'power2.out'
+      });
+    }
+  };
+
+  const handleNextClick = () => {
+
+    const target = document.getElementById("about");
+    if (target) {
+      const offset = -900;
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: target.offsetTop - offset,
+        ease: 'power2.out'
+      });
+    }
+  };
+
+  // -------------------------------------
   // ------------- CONTENT ---------------
   // -------------------------------------
 
@@ -273,11 +329,11 @@ function About() {
           {/* LYRICS */}
           <div id="about" className='lyricsRectangle'>
             <p>
-              Hi, I am Antoine SIMON, a 4th-year engineering student specialised in Computer Science.<br></br>
+              Hi, I am Antoine Simon, a 4th-year engineering student specialised in Computer Science.<br></br>
               What motivates me the most is expressing my creativity and attention to detail by building highly efficient applications while ensuring a seamless user experience.<br></br>
               I love solving complex problems, and I am the type to give it my all to bring my ideas to life, no matter how long or hard it is.<br></br>
               I’m always looking for new tools to learn to improve how I work on my projects. The more I learn, the better I can think and create.<br></br>
-              That’s also why I love working in a team. Without exchanging ideas, how could I be sure I’m starting on the best possible approach ?<br></br>
+              That’s also why I love working in a team. Without exchanging ideas, how could I be sure I’m starting on the best approach ?<br></br>
               Thank you so much for your time, and I hope you will enjoy exploring my website !
             </p>
 
@@ -291,19 +347,19 @@ function About() {
             {/* BTNS RECTANGLE */}
 
             <div className='btnsRectangle'>
-              <div className="icon-rectangle icon-shuffle">
+              <div className="icon-rectangle icon-shuffle" onClick={handleShuffleClick}>
                 <ShuffleIcon style={{ fontSize: '30px', color: '#FBFBFB', opacity: 0.8 }} />
               </div>
-              <div className="icon-rectangle icon-previous">
+              <div className="icon-rectangle icon-previous" onClick={handlePreviousClick}>
                 <SkipPreviousIcon style={{ fontSize: '40px', color: '#FBFBFB' }} />
               </div>
-              <div className="icon-rectangle icon-play">
+              <div className="icon-rectangle icon-play" onClick={handleReplayClick}>
                 <PlayArrowIcon style={{ fontSize: '40px', color: '#c74038' }} />
               </div>
-              <div className="icon-rectangle icon-next">
+              <div className="icon-rectangle icon-next" onClick={handleNextClick}>
                 <SkipNextIcon style={{ fontSize: '40px', color: '#FBFBFB' }} />
               </div>
-              <div className="icon-rectangle icon-replay">
+              <div className="icon-rectangle icon-replay" onClick={handleReplayClick}>
                 <ReplayIcon style={{ fontSize: '30px', color: '#FBFBFB', opacity: 0.8 }} />
               </div>
 

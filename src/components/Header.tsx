@@ -23,7 +23,7 @@ function Header() {
                 if (target) {
                     let offset = 0;
                     if (targetId === 'about') {
-                        offset = -300;
+                        offset = -330;
                     } else if (targetId === 'skills') {
                         offset = 330;
                     } else if (targetId === 'projects') {
