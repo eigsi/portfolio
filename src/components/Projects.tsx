@@ -1,9 +1,8 @@
-import { useRef, forwardRef, useEffect } from 'react'
-import '/src/assets/css/Projects.css'
-import SlideBtns from './SlideBtns';
+import { useRef, forwardRef, useEffect } from "react";
+import "/src/assets/css/Projects.css";
+import SlideBtns from "./SlideBtns";
 
 const Projects = forwardRef<HTMLDivElement>((_, ref) => {
-
   const slidesRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const SlideBtnsRef = useRef<HTMLDivElement>(null);
@@ -30,7 +29,6 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
     return () => observer.disconnect();
   }, []);
 
-
   // Animation Titre
   useEffect(() => {
     if (!titleRef.current || !SlideBtnsRef.current) return;
@@ -47,12 +45,10 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
           if (isVisible === lastState) return;
 
           if (isVisible) {
-            entry.target.classList.add('in-view');
-
+            entry.target.classList.add("in-view");
           } else {
-            entry.target.classList.remove('in-view');
+            entry.target.classList.remove("in-view");
           }
-
 
           lastState = isVisible; // Met à jour l'état
         },
@@ -65,7 +61,6 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
       return observer;
     };
 
-
     let observer = updateObserver(); // Initialisation de l'observer
 
     const handleResize = () => {
@@ -73,18 +68,18 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
       observer = updateObserver();
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   // Animation SlideTop
   useEffect(() => {
     const container = slidesRef.current;
-    const slideTops = container?.querySelectorAll('.slideTop');
+    const slideTops = container?.querySelectorAll(".slideTop");
     if (!container || !slideTops) return;
 
     const updateObserver = () => {
@@ -94,9 +89,9 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
+              entry.target.classList.add("in-view");
             } else {
-              entry.target.classList.remove('in-view');
+              entry.target.classList.remove("in-view");
             }
           });
         },
@@ -118,51 +113,54 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
       observer = updateObserver(); // Crée un nouvel observer avec le bon threshold
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-
   return (
-    <section className="projects" id='projects' ref={ref}>
+    <section className="projects" id="projects" ref={ref}>
       <h2 ref={titleRef}>My Biggest Project Yet</h2>
       <div ref={triggerRef} className="trigger"></div>
-      <section className='slides' ref={slidesRef}>
-
+      <section className="slides" ref={slidesRef}>
         {/* SLIDE 1 */}
-        <div className='slide slide1'>
-          <div className='slideTop in-view'>
+        <div className="slide slide1">
+          <div className="slideTop in-view">
             <h3>Wavee</h3>
-            <p>A social platform for rating and discovering music. </p>
+            <p>
+              A social platform for rating and discovering music.
+              <br />
+              Available on web and on iOS.
+            </p>
           </div>
 
-          <div className='backgroundImg backgroundImgContainer1'>
-          </div>
-
+          <div className="backgroundImg backgroundImgContainer1"></div>
         </div>
 
         {/* SLIDE 2 */}
-        <div className='slide slide2'>
-          <div className='slideTop slideTop2'>
+        <div className="slide slide2">
+          <div className="slideTop slideTop2">
             <h3>Live Through Music</h3>
-            <p>Rate albums, write reviews, and see what your friends think. <br></br>Music is better when shared. </p>
-            <a href='https://waveemusic.com'>Start Now !</a>
+            <p>
+              Rate albums, write reviews, and see what your friends think.{" "}
+              <br></br>Music is better when shared.{" "}
+            </p>
           </div>
-          <div className='backgroundImg backgroundImgContainer2'>
-          </div>
+          <div className="backgroundImg backgroundImgContainer2"></div>
         </div>
 
         {/* SLIDE 3 */}
-        <div className='slide slide3'>
-          <div className='slideTop slideTop3'>
+        <div className="slide slide3">
+          <div className="slideTop slideTop3">
             <h3>Powered by Innovation</h3>
-            <p>Built with cutting-edge technologies like Symfony, Kubernetes, and PostgreSQL. </p>
-            <div className='slideBottom slideBottom3'>
-
+            <p>
+              Built with cutting-edge technologies like Symfony, Docker, and
+              PostgreSQL.{" "}
+            </p>
+            <div className="slideBottom slideBottom3">
               <img
                 src="/images/wavee/symfony.png"
                 alt="Symfony"
@@ -178,20 +176,20 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                 alt="postgresql"
                 className="slide3Img"
               />
-
             </div>
           </div>
-          <div className='backgroundImg backgroundImgContainer3'>
-          </div>
-
+          <div className="backgroundImg backgroundImgContainer3"></div>
         </div>
 
         {/* SLIDE 4 */}
-        <div className='slide slide4'>
-          <div className='slideTop slideTop4'>
-            <h3>Coming to iOS</h3>
-            <p>The iOS version is on its way! Soon, discover music, rate albums, and connect with friends right from your iPhone.</p>
-            <div className='logos'>
+        <div className="slide slide4">
+          <div className="slideTop slideTop4">
+            <h3>Get It On Your Phone</h3>
+            <p>
+              Download the iOS app and take your music discovery everywhere you
+              go!
+            </p>
+            <div className="logos">
               <img
                 src="/images/wavee/swift.png"
                 alt="Swift"
@@ -204,18 +202,15 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
               />
             </div>
           </div>
-          <div className='backgroundImg backgroundImgContainer4'>
-          </div>
+          <div className="backgroundImg backgroundImgContainer4"></div>
         </div>
-
 
         {/* SLIDE 5 */}
-        <div className='slide5'>
-        </div>
+        <div className="slide5"></div>
       </section>
       <SlideBtns ref={SlideBtnsRef} slidesContainerRef={slidesRef} />
     </section>
-  )
+  );
 });
 
-export default Projects
+export default Projects;
