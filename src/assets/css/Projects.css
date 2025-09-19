@@ -1,538 +1,528 @@
 .projects {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .projects h2 {
-    opacity: 0;
-    transform: translateY(75px);
-    transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(75px);
+  transition: all 0.5s ease;
 }
 
 .trigger {
-    height: .5rem; 
-    width: 100%;
-    position: relative;
-  }
+  height: 0.5rem;
+  width: 100%;
+  position: relative;
+}
 
 .projects h2.in-view {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .slides {
-    scroll-snap-type: x mandatory;
-    -webkit-scroll-snap-type: x mandatory;
-    -ms-scroll-snap-type: mandatory;
+  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+  -ms-scroll-snap-type: mandatory;
 
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    height: calc(70% + 4vw);
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  height: calc(70% + 4vw);
 
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .slides::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .slide {
-    position: relative;
-    flex: 0 0 60%;
-    height: auto;
-    scroll-snap-align: center;
-    margin: 0 1rem;
-    background-color: #fff0f0;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    transition: 0.3s ease;
+  position: relative;
+  flex: 0 0 60%;
+  height: auto;
+  scroll-snap-align: center;
+  margin: 0 1rem;
+  background-color: #fff0f0;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: 0.3s ease;
 }
 
 .slide1 {
-    margin-left: 20%;
+  margin-left: 20%;
+}
+.slide1-wavee {
+  width: 5rem;
+  height: auto;
 }
 
 .slide5 {
-    flex: 0 0 20%;
-    scroll-snap-align: none;
+  flex: 0 0 20%;
+  scroll-snap-align: none;
 }
 
 .slide p {
-    margin: 0rem;
-    font-size: 1.8rem;
-    color: #c73f38;
-    font-weight: 500;
-    letter-spacing: -0.03em;
+  margin: 0rem;
+  font-size: 1.8rem;
+  color: #c73f38;
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .slide h3 {
-    margin: 0rem;
-    font-size: 2.5rem;
-    color: #c73f38;
-    font-weight: 500;
-    letter-spacing: -0.05em;
+  margin: 0rem;
+  font-size: 2.5rem;
+  color: #c73f38;
+  font-weight: 500;
+  letter-spacing: -0.05em;
 }
 
 .slide a {
-    margin-top: 1rem;
-    text-decoration: none;
-    text-decoration: underline;
-    color: #c73f38;
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    transition: 0.3s ease;
+  margin-top: 1rem;
+  text-decoration: none;
+  text-decoration: underline;
+  color: #c73f38;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  transition: 0.3s ease;
 }
 
 .slideTop {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 10;
-    padding: 2vw;
-    align-self: self-start;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 10;
+  padding: 2vw;
+  align-self: self-start;
 
-    /* état initial */
-    opacity: 0;
-    transform: translateX(90px);
-    transition: all 0.4s ease;
-
+  /* état initial */
+  opacity: 0;
+  transform: translateX(90px);
+  transition: all 0.4s ease;
 }
 
 .slideTop.in-view {
-
-    /* état final */
-    opacity: 1;
-    transform: translateX(0);
+  /* état final */
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .slideTop p {
-    text-align: left;
+  text-align: left;
 }
 
 .slideTop3,
 .slideTop4 {
-    width: 60%;
+  width: 60%;
 }
 
 .logos {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .logosImg {
-    height: 6rem;
-    width: 6rem;
-    border-radius: 1.7rem;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  height: 6rem;
+  width: 6rem;
+  border-radius: 1.7rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .slide3Img {
-    height: 5rem;
-    width: auto;
-    border-radius: 1.4rem;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  height: 5rem;
+  width: auto;
+  border-radius: 1.4rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .slideBottom {
-    margin-top: 3rem;
-    width: 100%;
-    display: flex;
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
 }
 
 /* ------ BACKGROUND IMAGES ------ */
 /* ------ BACKGROUND IMAGES ------ */
 
 .backgroundImg {
-    max-width: 100%;
-    max-height: 100%;
-    background-repeat: no-repeat;
-    position: absolute;
-}
-
-.backgroundImgContainer3 {
-    width: 90%;
-    height: 80%;
-    background-image: url("/images/wavee/ipad3.png");
-    background-size: cover;
-    background-position: center bottom;
-    bottom: 0;
-    align-self: flex-end;
+  max-width: 100%;
+  max-height: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
 }
 
 .backgroundImgContainer2 {
-    position: absolute;
-    width: 100%;
-    height: 90%;
-    background-image: url("/images/wavee/ipads3.png");
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    bottom: 0;
+  position: absolute;
+  width: 67%;
+  height: 100%;
+  background-image: url("/images/wavee/image2.png");
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  bottom: 6%;
 }
 
-
 .backgroundImgContainer1 {
-    width: 70%;
-    height: 60%;
-    background-image: url("/images/wavee/wavee1.png");
-    background-size: contain;
-    background-position: center;
-    top: 30%;
+  width: 70%;
+  height: 70%;
+  background-image: url("/images/wavee/image1.png");
+  background-size: contain;
+  background-position: center;
+  top: 30%;
 }
 
 .backgroundImgContainer4 {
-    height: 80%;
-    width: 50%;
-    background-image: url("/images/wavee/iphones.png");
-    background-size: contain;
-    background-position: center bottom;
-    bottom: 0;
-    align-self: flex-end;
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/wavee/image3.png");
+  background-size: contain;
+  background-position: center right;
+  right: -5%;
+  align-self: flex-end;
 }
 
 /* ------------ 1280px ------------ */
 /* ------------ 1280px ------------ */
 @media (max-width: 1280px) {
+  .projects {
+    width: 100vw;
+    height: 60vw;
+    max-height: 105vh;
+  }
 
-    .projects {
-        width: 100vw;
-        height: 60vw;
-        max-height: 105vh;
-    }
+  .slides {
+    width: 100%;
+    height: 100%;
+    height: 60vw;
+    max-height: 105vh;
+  }
 
-    .slides {
-        width: 100%;
-        height: 100%;
-        height: 60vw;
-        max-height: 105vh;
-    }
+  .slide {
+    flex: 0 0 70%;
+    height: 100%;
+  }
 
-    .slide {
-        flex: 0 0 70%;
-        height: 100%;
-    }
+  .slide1 {
+    margin-left: 15%;
+  }
 
-    .slide1 {
-        margin-left: 15%;
-    }
+  .slide5 {
+    flex: 0 0 15%;
+  }
 
-    .slide5 {
-        flex: 0 0 15%;
-    }
+  .slide p {
+    font-size: 1.6rem;
+  }
 
-    .slide p {
-        font-size: 1.6rem;
-    }
+  .slide h3 {
+    font-size: 2.1rem;
+  }
 
-    .slide h3 {
-        font-size: 2.1rem;
-    }
+  .slide a {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+  }
 
-    .slide a {
-        margin-top: 1rem;
-        font-size: 1.3rem;
-    }
+  .logos {
+    margin-top: 1rem;
+  }
 
-    .logos {
-        margin-top: 1rem;
-    }
+  .logosImg {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 1.3rem;
+  }
 
-    .logosImg {
-        height: 5rem;
-        width: 5rem;
-        border-radius: 1.3rem;
-    }
+  .slide3Img {
+    height: 4rem;
+    width: auto;
+    border-radius: 1.1rem;
+  }
 
-    .slide3Img {
-        height: 4rem;
-        width: auto;
-        border-radius: 1.1rem;
-    }
+  .slideTop {
+    padding: 2.5vw;
+  }
 
-    .slideTop {
-        padding: 2.5vw;
-    }
-
-    .slideBottom {
-        margin-top: 1.5rem;
-        width: 100%;
-        display: flex;
-    }
-
-    .backgroundImgContainer3 {
-        width: 75%;
-        height: 80%;
-        background-image: url("/images/wavee/ipad3.png");
-    }
-
+  .slideBottom {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+  }
+  .backgroundImgContainer4 {
+    height: 100%;
+    width: 100%;
+    background-image: url("/images/wavee/image3.png");
+    background-size: contain;
+    background-position: center right;
+    right: -5%;
+    align-self: flex-end;
+  }
 }
-
 
 /* ------------ 1024px ------------ */
 /* ------------ 1024px ------------ */
 @media (max-width: 1024px) {
+  .projects {
+    width: 100vw;
+    height: 75vw;
+    max-height: 105vh;
+  }
 
-    .projects {
-        width: 100vw;
-        height: 75vw;
-        max-height: 105vh;
-    }
+  .slides {
+    width: 100%;
+    height: 100%;
+    height: 70vw;
+    max-height: 105vh;
+  }
 
-    .slides {
-        width: 100%;
-        height: 100%;
-        height: 70vw;
-        max-height: 105vh;
-    }
+  .slide {
+    flex: 0 0 70%;
+    height: 100%;
+  }
 
-    .slide {
-        flex: 0 0 70%;
-        height: 100%;
-    }
+  .slide1 {
+    margin-left: 15%;
+  }
 
-    .slide1 {
-        margin-left: 15%;
-    }
+  .slide5 {
+    flex: 0 0 15%;
+  }
 
-    .slide5 {
-        flex: 0 0 15%;
-    }
+  .slide p {
+    font-size: 1.4rem;
+  }
 
-    .slide p {
-        font-size: 1.4rem;
-    }
+  .slide a {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
 
-    .slide a {
-        margin-top: 1rem;
-        font-size: 1.2rem;
-    }
+  .slide h3 {
+    font-size: 1.8rem;
+  }
 
-    .slide h3 {
-        font-size: 1.8rem;
-    }
+  .logos {
+    margin-top: 1rem;
+  }
 
-    .logos {
-        margin-top: 1rem;
-    }
+  .logosImg {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 1.3rem;
+  }
 
-    .logosImg {
-        height: 5rem;
-        width: 5rem;
-        border-radius: 1.3rem;
-    }
+  .slide3Img {
+    height: 4rem;
+    width: auto;
+    border-radius: 1.1rem;
+  }
 
-    .slide3Img {
-        height: 4rem;
-        width: auto;
-        border-radius: 1.1rem;
-    }
+  .slideTop {
+    padding: 3vw;
+  }
 
-    .slideTop {
-        padding: 3vw;
-    }
+  .slideTop2 br {
+    display: none;
+  }
 
-    .slideTop2 br {
-        display: none;
-    }
+  .slideTop2 {
+    width: 90%;
+  }
 
-    .slideTop2 {
-        width: 90%;
-    }
+  .slideBottom {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+  }
 
-    .slideBottom {
-        margin-top: 1.5rem;
-        width: 100%;
-        display: flex;
-    }
-
-    .backgroundImgContainer1 {
-        width: 85%;
-        height: 65%;
-        background-image: url("/images/wavee/wavee1.png");
-        top: 30%;
-    }
-
+  .backgroundImgContainer1 {
+    width: 85%;
+    height: 65%;
+    background-image: url("/images/wavee/image1.png");
+    top: 30%;
+  }
 }
 
 /* ------------ 768px ------------ */
 /* ------------ 768px ------------ */
 @media (max-width: 768px) {
+  .projects {
+    width: 100vw;
+    height: 90vw;
+    max-height: 105vh;
+  }
 
-    .projects {
-        width: 100vw;
-        height: 90vw;
-        max-height: 105vh;
-    }
+  .slides {
+    width: 100%;
+    height: 100%;
+    height: 85vw;
+    max-height: 105vh;
+  }
 
-    .slides {
-        width: 100%;
-        height: 100%;
-        height: 85vw;
-        max-height: 105vh;
-    }
+  .slide {
+    flex: 0 0 85%;
+    height: 100%;
+    border-radius: 1.5rem;
+  }
 
-    .slide {
-        flex: 0 0 85%;
-        height: 100%;
-        border-radius: 1.5rem;
-    }
+  .slide1 {
+    margin-left: 10%;
+  }
 
-    .slide1 {
-        margin-left: 10%;
-    }
+  .slide5 {
+    flex: 0 0 10%;
+  }
 
-    .slide5 {
-        flex: 0 0 10%;
-    }
+  .slide p {
+    font-size: 1.2rem;
+  }
 
-    .slide p {
-        font-size: 1.2rem;
-    }
+  .slide a {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
 
-    .slide a {
-        margin-top: 1rem;
-        font-size: 1rem;
-    }
+  .slide h3 {
+    font-size: 1.7rem;
+  }
 
-    .slide h3 {
-        font-size: 1.7rem;
-    }
+  .logos {
+    margin-top: 1rem;
+  }
 
-    .logos {
-        margin-top: 1rem;
-    }
+  .logosImg {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 1.2rem;
+  }
 
-    .logosImg {
-        height: 4.5rem;
-        width: 4.5rem;
-        border-radius: 1.2rem;
-    }
+  .slide3Img {
+    height: 4rem;
+    width: auto;
+    border-radius: 1.1rem;
+  }
 
-    .slide3Img {
-        height: 4rem;
-        width: auto;
-        border-radius: 1.1rem;
-    }
+  .slideTop {
+    padding: 3.5vw;
+  }
 
-    .slideTop {
-        padding: 3.5vw;
-    }
+  .slideTop2 {
+    width: 90%;
+  }
 
-    .slideTop2 {
-        width: 90%;
-    }
-
-    .backgroundImgContainer2 {
-        width: 100%;
-        height: 80%;
-        background-image: url("/images/wavee/ipads3.png");
-    }
-
-    .backgroundImgContainer3 {
-        width: 90%;
-        height: 80%;
-        background-image: url("/images/wavee/ipad3.png");
-    }
+  .backgroundImgContainer2 {
+    width: 100%;
+    height: 80%;
+    background-image: url("/images/wavee/image2.png");
+  }
+  .backgroundImgContainer4 {
+    height: 100%;
+    width: 100%;
+    background-image: url("/images/wavee/image3.png");
+    background-size: contain;
+    background-position: center right;
+    right: -5%;
+    align-self: flex-end;
+  }
 }
 
 /* ------------ 500px ------------ */
 /* ------------ 500px ------------ */
 @media (max-width: 500px) {
+  .projects {
+    margin-top: -10vh;
+    width: 100vw;
+    height: 160vw;
+  }
 
-    .projects {
-        margin-top: -10vh;
-        width: 100vw;
-        height: 160vw;
-    }
+  .slides {
+    width: 100%;
+    height: 100%;
+    height: 160vw;
+  }
 
-    .slides {
-        width: 100%;
-        height: 100%;
-        height: 160vw;
-    }
+  .slide {
+    flex: 0 0 90%;
+    height: 100%;
+    border-radius: 1.5rem;
+  }
 
-    .slide {
-        flex: 0 0 90%;
-        height: 100%;
-        border-radius: 1.5rem;
-    }
+  .slide1 {
+    margin-left: 5%;
+  }
 
-    .slide1 {
-        margin-left: 5%;
-    }
+  .slide5 {
+    flex: 0 0 5%;
+  }
 
-    .slide5 {
-        flex: 0 0 5%;
-    }
+  .slide p {
+    font-size: 1.2rem;
+  }
 
-    .slide p {
-        font-size: 1.2rem;
-    }
+  .slide a {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
 
-    .slide a {
-        margin-top: 1rem;
-        font-size: 1rem;
-    }
+  .slide h3 {
+    font-size: 1.7rem;
+  }
 
-    .slide h3 {
-        font-size: 1.7rem;
-    }
+  .logosImg {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 1.1rem;
+  }
 
+  .slide3Img {
+    height: 3.5rem;
+    width: auto;
+    border-radius: 1rem;
+  }
 
-    .logosImg {
-        height: 4rem;
-        width: 4rem;
-        border-radius: 1.1rem;
-    }
+  .slideTop {
+    padding: 6vw;
+    width: 90%;
+    /* état initial */
+    transform: translateX(35px);
+    transition: all 0.4s ease;
+  }
 
-    .slide3Img {
-        height: 3.5rem;
-        width: auto;
-        border-radius: 1rem;
-    }
+  .backgroundImgContainer2 {
+    width: 100%;
+    height: 60%;
+    background-size: cover;
+    background-image: url("/images/wavee/image2.png");
+  }
 
-    .slideTop {
-        padding: 6vw;
-        width: 90%;
-        /* état initial */
-        transform: translateX(35px);
-        transition: all 0.4s ease;
-    }
-
-
-    .backgroundImgContainer2 {
-        width: 100%;
-        height: 60%;
-        background-size: cover;
-        background-image: url("/images/wavee/ipads3.png");
-    }
-
-    .backgroundImgContainer3 {
-        width: 90%;
-        height: 60%;
-        background-image: url("/images/wavee/ipad3.png");
-    }
-
-    .backgroundImgContainer1 {
-        width: 90%;
-        height: 75%;
-        background-image: url("/images/wavee/wavee1.png");
-        top: 30%;
-    }
-
+  .backgroundImgContainer1 {
+    width: 90%;
+    height: 75%;
+    background-image: url("/images/wavee/image1.png");
+    top: 30%;
+  }
+  .backgroundImgContainer4 {
+    height: 100%;
+    width: 100%;
+    background-image: url("/images/wavee/image3.png");
+    background-size: contain;
+    background-position: center right;
+    right: -5%;
+    align-self: flex-end;
+  }
 }

@@ -152,35 +152,6 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
           <div className="backgroundImg backgroundImgContainer2"></div>
         </div>
 
-        {/* SLIDE 3 */}
-        <div className="slide slide3">
-          <div className="slideTop slideTop3">
-            <h3>Powered by Innovation</h3>
-            <p>
-              Built with cutting-edge technologies like Symfony, Docker, and
-              PostgreSQL.{" "}
-            </p>
-            <div className="slideBottom slideBottom3">
-              <img
-                src="/images/wavee/symfony.png"
-                alt="Symfony"
-                className="slide3Img"
-              />
-              <img
-                src="/images/wavee/kubernetes.png"
-                alt="Kubernetes"
-                className="slide3Img"
-              />
-              <img
-                src="/images/wavee/postgresql.png"
-                alt="postgresql"
-                className="slide3Img"
-              />
-            </div>
-          </div>
-          <div className="backgroundImg backgroundImgContainer3"></div>
-        </div>
-
         {/* SLIDE 4 */}
         <div className="slide slide4">
           <div className="slideTop slideTop4">
@@ -190,16 +161,17 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
               go!
             </p>
             <div className="logos">
-              <img
-                src="/images/wavee/swift.png"
-                alt="Swift"
-                className="swiftLogo logosImg"
-              />
-              <img
-                src="/images/wavee/ios.png"
-                alt="iOS"
-                className="iosLogo logosImg"
-              />
+              <a
+                href="https://apps.apple.com/us/app/wavee-music/id6752251750"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/images/wavee/waveeLogo.png"
+                  alt="Wavee"
+                  className="WaveeLogo logosImg"
+                />
+              </a>
             </div>
           </div>
           <div className="backgroundImg backgroundImgContainer4"></div>
