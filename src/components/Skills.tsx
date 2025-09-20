@@ -383,7 +383,7 @@ const Skills = forwardRef<HTMLDivElement>((_, ref) => {
               alt="Logiciels Playlist"
             />
             <div className="playlistInfos">
-              <h3>2D & 3D Editing </h3>
+              <h3>Design & Editing </h3>
               <h4>4 Songs</h4>
               <h5>3 Songs</h5>
             </div>
